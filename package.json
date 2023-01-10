@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export -o out",
-    "deploy": " yarn build && yarn export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
