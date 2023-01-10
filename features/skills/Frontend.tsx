@@ -3,34 +3,34 @@ import React from 'react'
 import { FcApproval } from 'react-icons/fc'
 import styled from 'styled-components'
 
-const Backend = () => {
-  const skill_backend1 = [
+const Frontend = () => {
+  const front_skills1 = [
     {
-      skill_name: 'Node',
+      skill_name: 'React',
       skill_level: 'Intermediate',
     },
     {
-      skill_name: 'PHP',
-      skill_level: 'Basic',
+      skill_name: 'Next',
+      skill_level: 'Intermediate',
     },
   ]
-  const skill_backend2 = [
+  const front_skills2 = [
     {
-      skill_name: 'SQL',
-      skill_level: 'Intermediate',
+      skill_name: 'React Native',
+      skill_level: 'Basic',
     },
     {
-      skill_name: 'Golang',
-      skill_level: 'Basic',
+      skill_name: 'Javascript',
+      skill_level: 'Advanced',
     },
   ]
   return (
     <React.Fragment>
       <Card>
-        <Skilltitle>Backend Developer</Skilltitle>
+        <Skilltitle>Frontend Developer</Skilltitle>
         <SkillBox>
           <SkillGroup>
-            {skill_backend1.map((data, i) => (
+            {front_skills1.map((data, i) => (
               <SkillData key={i}>
                 <FcApproval />
                 <div>
@@ -40,9 +40,8 @@ const Backend = () => {
               </SkillData>
             ))}
           </SkillGroup>
-
           <SkillGroup>
-            {skill_backend2.map((data, i) => (
+            {front_skills2.map((data, i) => (
               <SkillData key={i}>
                 <FcApproval />
                 <div>
@@ -58,17 +57,13 @@ const Backend = () => {
   )
 }
 
-export default Backend
+export default Frontend
 
 const Skilltitle = styled.h3`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
-
-  @media (prefers-color-scheme: dark) {
-    color: #b0b8b8;
-  }
 `
 const SkillBox = styled.div`
   display: flex;
@@ -94,13 +89,9 @@ const SkillData = styled.div`
   }
 `
 const SkillName = styled.h3`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 18px;
-
-  @media (prefers-color-scheme: dark) {
-    color: #b0b8b8;
-  }
 `
 const SkillLevel = styled.span`
   font-size: small;

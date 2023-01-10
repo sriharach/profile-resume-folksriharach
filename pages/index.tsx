@@ -4,7 +4,8 @@ import type { NextPageWithLayout } from '@/interfaces/next-interface'
 import LayoutDefault from '@/components/layout/LayoutDefault'
 import AboutPage from '@/features/AboutPage'
 import HomePage from '@/features/HomePage'
-import SkillsPage from '@/features/SkillsPage'
+import SkillsPage from '@/features/skills/SkillsPage'
+import QualificationPage from '@/features/QualificationPage'
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -13,6 +14,7 @@ const Home: NextPageWithLayout = () => {
         <HomePage />
         <AboutPage />
         <SkillsPage />
+        <QualificationPage />
       </Box>
     </>
   )

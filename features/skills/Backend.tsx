@@ -3,34 +3,34 @@ import React from 'react'
 import { FcApproval } from 'react-icons/fc'
 import styled from 'styled-components'
 
-const Frontend = () => {
-  const front_skills1 = [
+const Backend = () => {
+  const skill_backend1 = [
     {
-      skill_name: 'React',
+      skill_name: 'Node',
       skill_level: 'Intermediate',
     },
     {
-      skill_name: 'Next',
-      skill_level: 'Intermediate',
-    },
-  ]
-  const front_skills2 = [
-    {
-      skill_name: 'React Native',
+      skill_name: 'PHP',
       skill_level: 'Basic',
     },
+  ]
+  const skill_backend2 = [
     {
-      skill_name: 'Javascript',
-      skill_level: 'Advanced',
+      skill_name: 'SQL',
+      skill_level: 'Intermediate',
+    },
+    {
+      skill_name: 'Golang',
+      skill_level: 'Basic',
     },
   ]
   return (
     <React.Fragment>
       <Card>
-        <Skilltitle>Frontend Developer</Skilltitle>
+        <Skilltitle>Backend Developer</Skilltitle>
         <SkillBox>
           <SkillGroup>
-            {front_skills1.map((data, i) => (
+            {skill_backend1.map((data, i) => (
               <SkillData key={i}>
                 <FcApproval />
                 <div>
@@ -40,8 +40,9 @@ const Frontend = () => {
               </SkillData>
             ))}
           </SkillGroup>
+
           <SkillGroup>
-            {front_skills2.map((data, i) => (
+            {skill_backend2.map((data, i) => (
               <SkillData key={i}>
                 <FcApproval />
                 <div>
@@ -57,17 +58,13 @@ const Frontend = () => {
   )
 }
 
-export default Frontend
+export default Backend
 
 const Skilltitle = styled.h3`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
-
-  @media (prefers-color-scheme: dark) {
-    color: #b0b8b8;
-  }
 `
 const SkillBox = styled.div`
   display: flex;
@@ -93,13 +90,9 @@ const SkillData = styled.div`
   }
 `
 const SkillName = styled.h3`
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 18px;
-
-  @media (prefers-color-scheme: dark) {
-    color: #b0b8b8;
-  }
 `
 const SkillLevel = styled.span`
   font-size: small;

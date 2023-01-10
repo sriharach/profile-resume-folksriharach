@@ -35,7 +35,7 @@ const MobileMenu = () => {
 export default MobileMenu
 
 const DrawerAntd = styled(Drawer)`
-  @media (prefers-color-scheme: dark) {
+  ${(props) => props.theme.prefers_color_scheme} {
     border-color: #111111;
     .ant-drawer-body {
       background: #111111;
@@ -68,7 +68,7 @@ const Menu = styled.ul`
 `
 
 const IconButton = styled(Button)`
-  @media (prefers-color-scheme: dark) {
+  ${(props) => props.theme.prefers_color_scheme} {
     color: #b0b8b8;
   }
 `

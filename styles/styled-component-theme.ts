@@ -89,6 +89,7 @@ export const theme = {
             down: `@media screen and (max-width : ${xxlMax}px)`,
         },
     },
+    prefers_color_scheme: '@media (prefers-color-scheme: dark)',
 }
 
 export type CustomTheme = typeof theme

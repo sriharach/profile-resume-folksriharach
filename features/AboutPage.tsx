@@ -7,10 +7,10 @@ import useMedia from 'use-media'
 import { theme } from '@/styles/styled-component-theme'
 
 const AboutPage = () => {
-  const isWide = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
+  const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
   return (
     <React.Fragment>
-      <Section style={{ display: 'grid', rowGap: '4rem' }}>
+      <Section>
         <Topic>
           <h2>About me</h2>
           <p>My introduction</p>
@@ -50,11 +50,11 @@ const AboutPage = () => {
             <div>
               <Button
                 style={{
-                  height: isWide ? '40px' : '56px',
+                  height: isWideLg ? '40px' : '56px',
                   borderRadius: '0.8rem',
                 }}
                 type='primary'
-                block={isWide}
+                block={isWideLg}
                 icon={<ExportOutlined />}
               >
                 Download Transcript
@@ -142,7 +142,7 @@ const Box = styled.div`
 
   svg,
   span {
-    @media (prefers-color-scheme: dark) {
+    ${(props) => props.theme.prefers_color_scheme} {
       color: #b0b8b8;
     }
   }
