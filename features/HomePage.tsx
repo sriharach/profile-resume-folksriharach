@@ -75,10 +75,10 @@ const Grid = styled.div`
   }
 `
 
-const Content = styled.section`
+const Content = styled.div`
   h1 {
     font-size: 46px;
-    font-weight: 700;
+    font-weight: bold;
   }
 
   ${(props) => props.theme.breakpoints.lg.down} {

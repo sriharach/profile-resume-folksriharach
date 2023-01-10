@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import type { NextPageWithLayout } from '@/interfaces/next-interface'
-import LayoutDefault from '@/components/Layout/LayoutDefault'
+import LayoutDefault from '@/components/layout/LayoutDefault'
 import AboutPage from '@/features/AboutPage'
 import HomePage from '@/features/HomePage'
+import SkillsPage from '@/features/SkillsPage'
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -11,6 +12,7 @@ const Home: NextPageWithLayout = () => {
       <Box>
         <HomePage />
         <AboutPage />
+        <SkillsPage />
       </Box>
     </>
   )

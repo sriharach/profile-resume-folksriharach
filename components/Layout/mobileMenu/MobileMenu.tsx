@@ -36,15 +36,15 @@ export default MobileMenu
 
 const DrawerAntd = styled(Drawer)`
   @media (prefers-color-scheme: dark) {
-    border-color: #23242afc;
+    border-color: #111111;
     .ant-drawer-body {
-      background: #23242afc;
+      background: #111111;
     }
     .ant-drawer-header {
-      background: #23242afc;
+      background: #111111;
     }
     svg {
-      color: #cdd6d6e7;
+      color: #b0b8b8;
     }
   }
   border-radius: 14px 14px 0px 0px;
@@ -69,6 +69,6 @@ const Menu = styled.ul`
 
 const IconButton = styled(Button)`
   @media (prefers-color-scheme: dark) {
-    color: #cdd6d6e7;
+    color: #b0b8b8;
   }
 `

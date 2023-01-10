@@ -24,6 +24,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
+          <title>Portfolio Websilte</title>
           <Main />
           <NextScript />
         </body>

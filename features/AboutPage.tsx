@@ -10,8 +10,11 @@ const AboutPage = () => {
   const isWide = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
   return (
     <React.Fragment>
-      <div style={{ display: 'grid', rowGap: '4rem' }}>
-        <Topic>About Me</Topic>
+      <Section style={{ display: 'grid', rowGap: '4rem' }}>
+        <Topic>
+          <h2>About me</h2>
+          <p>My introduction</p>
+        </Topic>
         <Grid>
           <Yourself />
           <DetailContent>
@@ -46,9 +49,11 @@ const AboutPage = () => {
             </div>
             <div>
               <Button
-                style={{ height: isWide ? '40px' : '56px' }}
+                style={{
+                  height: isWide ? '40px' : '56px',
+                  borderRadius: '0.8rem',
+                }}
                 type='primary'
-                shape='round'
                 block={isWide}
                 icon={<ExportOutlined />}
               >
@@ -57,7 +62,7 @@ const AboutPage = () => {
             </div>
           </DetailContent>
         </Grid>
-      </div>
+      </Section>
     </React.Fragment>
   )
 }
@@ -76,11 +81,16 @@ const Grid = styled.div`
   }
 `
 
-const Topic = styled.span`
-  font-size: 32px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
+const Topic = styled.div`
+  text-align: center;
+  h2 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  p {
+    color: #757575fa;
+  }
 `
 const Yourself = styled.div`
   background-image: url('img/ITME.jpeg');
@@ -114,12 +124,33 @@ const Box = styled.div`
     grid-template-columns: 1fr;
     row-gap: 2.5rem;
   }
+
+  ${(props) => props.theme.breakpoints.md.down} {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      flex: 1;
+    }
+  }
+
+  ${(props) => props.theme.breakpoints.sm.down} {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+
+  svg,
+  span {
+    @media (prefers-color-scheme: dark) {
+      color: #b0b8b8;
+    }
+  }
 `
 const InlineBox = styled(Card)`
   display: grid;
   align-items: center;
   text-align: center;
-  border-radius: 8px;
 
   svg {
     font-size: 1.6rem;
@@ -135,4 +166,8 @@ const InlineBox = styled(Card)`
     color: #757575fa;
     font-size: small;
   }
+`
+const Section = styled.section`
+  display: grid;
+  row-gap: 4rem;
 `
