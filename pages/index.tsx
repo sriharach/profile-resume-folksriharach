@@ -6,6 +6,7 @@ import AboutPage from '@/features/AboutPage'
 import HomePage from '@/features/HomePage'
 import SkillsPage from '@/features/skills/SkillsPage'
 import QualificationPage from '@/features/QualificationPage'
+import ContactPage from '@/features/ContactPage'
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPageWithLayout = () => {
         <AboutPage />
         <SkillsPage />
         <QualificationPage />
+        <ContactPage />
       </Box>
     </>
   )
@@ -27,10 +29,9 @@ export default Home
 const Box = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 5.5rem;
-  row-gap: 14rem;
+  row-gap: 8rem;
 
   ${(props) => props.theme.breakpoints.md.down} {
-    row-gap: 8rem;
+    row-gap: 4.5rem;
   }
 `

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button, Drawer } from 'antd'
 import { MenuUnfoldOutlined } from '@ant-design/icons'
+import { useNavroutes } from '../routes'
 
 const MobileMenu = () => {
   const [isDrawer, setIsDrawer] = React.useState(false)
@@ -22,10 +23,14 @@ const MobileMenu = () => {
         height={300}
       >
         <Menu className='front-md'>
-          <li>Home</li>
-          <li>About</li>
-          <li>Skills</li>
-          <li>Contact</li>
+          {useNavroutes.map((routes) => (
+            <li
+              key={routes.id}
+              onClick={() => (window.location.href = routes.href)}
+            >
+              {routes.name}
+            </li>
+          ))}
         </Menu>
       </DrawerAntd>
     </React.Fragment>
@@ -50,7 +55,6 @@ const DrawerAntd = styled(Drawer)`
   border-radius: 14px 14px 0px 0px;
   .ant-drawer-header {
     border-bottom: none;
-    padding: 16px;
     .ant-drawer-header-title {
       display: flex;
       justify-content: right;
@@ -59,11 +63,16 @@ const DrawerAntd = styled(Drawer)`
 `
 
 const Menu = styled.ul`
-  display: grid;
-  row-gap: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
 
-  li {
-    cursor: pointer;
+  ${(props) => props.theme.breakpoints.sm.down} {
+    li {
+      font-size: 16px;
+    }
   }
 `
 

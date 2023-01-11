@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <React.Fragment>
       <Container className='container'>
-        <span className='front-bold'>Portfolio</span>
+        <span className='front-bold' style={{ cursor: 'default' }}>
+          Portfolio
+        </span>
         {isWide ? <DesktopNav /> : <MobileMenu />}
       </Container>
     </React.Fragment>

@@ -9,6 +9,7 @@ import {
 const HomePage = () => {
   return (
     <React.Fragment>
+      <div id='home' />
       <Grid>
         <Social>
           <InstagramOutlined

@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const QualificationPage = () => {
   return (
     <React.Fragment>
+      <div id='qualification' />
       <Section>
         <Topic>
           <h2>Qualification</h2>
@@ -57,5 +58,3 @@ const Topic = styled.div`
     color: #757575fa;
   }
 `
-
-// const

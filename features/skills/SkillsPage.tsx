@@ -11,6 +11,7 @@ const SkillsPage = () => {
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
   return (
     <React.Fragment>
+      <div id='skills' />
       <Section>
         <Topic>
           <h2>Skills</h2>

@@ -65,6 +65,10 @@ const Skilltitle = styled.h3`
   font-weight: bold;
   text-align: center;
   margin-bottom: 15px;
+
+  ${(props) => props.theme.breakpoints.sm.down} {
+    font-size: 16px;
+  }
 `
 const SkillBox = styled.div`
   display: flex;
@@ -93,8 +97,16 @@ const SkillName = styled.h3`
   font-size: 20px;
   font-weight: bold;
   line-height: 18px;
+
+  ${(props) => props.theme.breakpoints.sm.down} {
+    font-size: 14px;
+  }
 `
 const SkillLevel = styled.span`
   font-size: small;
   color: #757575fa;
+
+  ${(props) => props.theme.breakpoints.sm.down} {
+    font-size: 10px;
+  }
 `

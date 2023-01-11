@@ -2,14 +2,32 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button, Card } from 'antd'
 import { BiAward, BiBriefcaseAlt, BiSupport } from 'react-icons/bi'
-import { ExportOutlined } from '@ant-design/icons'
+import { DownloadOutlined } from '@ant-design/icons'
 import useMedia from 'use-media'
 import { theme } from '@/styles/styled-component-theme'
 
 const AboutPage = () => {
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
+
+  const handleDownload = () => {
+    const time = new Date()
+    fetch('transcript.pdf').then((res) => {
+      res.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob)
+        // Setting various property values
+        const alink = document.createElement('a')
+        alink.href = fileURL
+        alink.download = `transcript-${time.getDate()}-${
+          time.getMonth() + 1
+        }-${time.getFullYear()}`
+        alink.click()
+      })
+    })
+  }
+
   return (
     <React.Fragment>
+      <div id='about' />
       <Section>
         <Topic>
           <h2>About me</h2>
@@ -49,13 +67,14 @@ const AboutPage = () => {
             </div>
             <div>
               <Button
+                onClick={handleDownload}
                 style={{
                   height: isWideLg ? '40px' : '56px',
                   borderRadius: '0.8rem',
                 }}
                 type='primary'
                 block={isWideLg}
-                icon={<ExportOutlined />}
+                icon={<DownloadOutlined />}
               >
                 Download Transcript
               </Button>
