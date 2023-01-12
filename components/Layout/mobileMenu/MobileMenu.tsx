@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Drawer } from 'antd'
-import { MenuUnfoldOutlined } from '@ant-design/icons'
+import { MenuOutlined } from '@ant-design/icons'
 import { useNavroutes } from '../routes'
 
 const MobileMenu = () => {
@@ -13,7 +13,7 @@ const MobileMenu = () => {
     <React.Fragment>
       <IconButton
         type='text'
-        icon={<MenuUnfoldOutlined />}
+        icon={<MenuOutlined />}
         onClick={handleDrawer}
       />
       <DrawerAntd

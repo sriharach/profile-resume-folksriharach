@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
+    "@emailjs/browser": "^3.10.0",
     "antd": "^5.0.7",
     "axios": "^1.2.1",
     "dayjs": "^1.11.6",

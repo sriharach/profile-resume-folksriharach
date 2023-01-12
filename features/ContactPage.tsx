@@ -1,16 +1,53 @@
+import React, { useState } from 'react'
 import { SendOutlined } from '@ant-design/icons'
-import { Card, Input, Form, Button } from 'antd'
-import React from 'react'
+import { Card, Input, Form, Button, notification } from 'antd'
 import styled from 'styled-components'
 import { BsLine, BsMailbox, BsPhone } from 'react-icons/bs'
+import emailjs from '@emailjs/browser'
+
+type TinputForm = {
+  name: string
+  mail: string
+  message: string
+  phone_number: string
+}
+
+const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID as string
+const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY as string
 
 const ContactPage = () => {
-  const sendMessage = (data: any) => {
-    // console.log('data', data)
-    alert(data.name)
+  const [sendLoadmail, setSendLoadMail] = useState<boolean>(false)
+  const [api, contextHolder] = notification.useNotification()
+  const [form] = Form.useForm<TinputForm>()
+
+  const sendMessage = async (data: TinputForm) => {
+    try {
+      setSendLoadMail(true)
+      //eslint-disable-next-line import/no-named-as-default-member
+      const result = await emailjs.send(serviceID, templateID, data, publicKey)
+      if (result.status === 200) {
+        setSendLoadMail(false)
+        form.resetFields()
+        api['success']({
+          message: 'Message sent.',
+          description: 'We have your message sent to the owner.',
+          duration: 3.5,
+        })
+      }
+    } catch (error) {
+      console.log('errorSendMail', error)
+      api['error']({
+        message: 'Crashes.',
+        description: 'Please contact the administrator.',
+        duration: 3.5,
+      })
+      setSendLoadMail(false)
+    }
   }
   return (
     <React.Fragment>
+      {contextHolder}
       <div id='contact' />
       <Section>
         <Topic>
@@ -33,8 +70,6 @@ const ContactPage = () => {
               </div>
               <h3>Email</h3>
               <p>folksriharach@gmail.com</p>
-              <br />
-              <p>Write me</p>
             </ContactCard>
             <ContactCard>
               <div>
@@ -42,14 +77,13 @@ const ContactPage = () => {
               </div>
               <h3>Line ID</h3>
               <p>fspfolk</p>
-              <br />
-              <p>Write me</p>
             </ContactCard>
           </ContactSendWrite>
 
           <ContactSendWrite>
             <ContactTitle>Write to me</ContactTitle>
             <Form
+              form={form}
               onFinish={sendMessage}
               style={{ width: '100%' }}
               layout='vertical'
@@ -57,21 +91,73 @@ const ContactPage = () => {
                 layout: 'vertical',
               }}
             >
-              <Form.Item label='Name' name='name'>
+              <Form.Item
+                label='Name'
+                name='name'
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please enter name.',
+                  },
+                ]}
+              >
                 <ContactInput placeholder='Enter name' />
               </Form.Item>
-              <Form.Item label='Mail' name='mail'>
+              <Form.Item
+                label='Mail'
+                name='mail'
+                rules={[
+                  {
+                    type: 'email',
+                    message: 'The input is not valid mail.',
+                  },
+                  {
+                    required: true,
+                    message: 'Please enter mail.',
+                  },
+                ]}
+              >
                 <ContactInput placeholder='Enter mail' />
               </Form.Item>
-              <Form.Item label='Description' name='description'>
+              <Form.Item
+                label='Phone number'
+                name='phone_number'
+                rules={[
+                  {
+                    type: 'number',
+                    transform(value) {
+                      if (typeof value === 'undefined') return
+                      return Number(value)
+                    },
+                    message: 'The input is not valid phone number.',
+                  },
+                  {
+                    required: true,
+                    message: 'Please enter phone number.',
+                  },
+                ]}
+              >
+                <ContactInput placeholder='Enter phone number' />
+              </Form.Item>
+              <Form.Item
+                label='Message'
+                name='message'
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please enter message.',
+                  },
+                ]}
+              >
                 <Input.TextArea
                   style={{ fontSize: '18px' }}
                   rows={4}
-                  placeholder='Enter Description'
+                  placeholder='Enter message'
                 />
               </Form.Item>
               <Form.Item>
                 <Button
+                  loading={sendLoadmail}
                   style={{ height: '50px', borderRadius: '0.8rem' }}
                   icon={<SendOutlined />}
                   type='primary'
@@ -140,7 +226,7 @@ const ContactTitle = styled.h3``
 
 const ContactCard = styled(Card)`
   width: 100%;
-  min-height: 160px;
+  max-height: 130px;
   text-align: center;
 
   svg {
