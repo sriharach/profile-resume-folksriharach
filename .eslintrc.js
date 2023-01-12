@@ -19,5 +19,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
     'no-empty-function': 'off',
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-page-custom-font': 'off'
   },
 }
