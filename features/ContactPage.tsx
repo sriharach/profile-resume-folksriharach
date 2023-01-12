@@ -232,6 +232,10 @@ const ContactCard = styled(Card)`
   svg {
     font-size: 1.8rem;
   }
+
+  ${(props) => props.theme.prefers_color_scheme} {
+    color: #fff;
+  }
 `
 const ContactInput = styled(Input)`
   padding: 16px;
