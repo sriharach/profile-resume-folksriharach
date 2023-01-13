@@ -21,7 +21,7 @@ const Backend = () => {
     },
     {
       skill_name: 'Golang',
-      skill_level: 'Basic',
+      skill_level: 'Beginner',
     },
   ]
   return (
