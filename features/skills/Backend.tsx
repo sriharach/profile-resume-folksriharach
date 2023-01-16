@@ -1,27 +1,37 @@
 import { Card } from 'antd'
+import { useTranslation } from 'next-i18next'
 import React from 'react'
 import { FcApproval } from 'react-icons/fc'
 import styled from 'styled-components'
 
 const Backend = () => {
+  const { t } = useTranslation('common')
   const skill_backend1 = [
     {
       skill_name: 'Node',
-      skill_level: 'Intermediate',
+      skill_level: t('skills.intermediate'),
     },
     {
       skill_name: 'PHP',
-      skill_level: 'Basic',
+      skill_level: t('skills.basic'),
+    },
+    {
+      skill_name: 'Linux',
+      skill_level: t('skills.beginner'),
     },
   ]
   const skill_backend2 = [
     {
+      skill_name: 'Typescript',
+      skill_level: t('skills.advanced'),
+    },
+    {
       skill_name: 'SQL',
-      skill_level: 'Intermediate',
+      skill_level: t('skills.intermediate'),
     },
     {
       skill_name: 'Golang',
-      skill_level: 'Beginner',
+      skill_level: t('skills.beginner'),
     },
   ]
   return (

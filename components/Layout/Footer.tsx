@@ -1,12 +1,14 @@
+import { useTranslation } from 'next-i18next'
 import React from 'react'
 import styled from 'styled-components'
 
 const Footer = () => {
+  const { t } = useTranslation('footer')
   return (
     <React.Fragment>
       <Container className='container'>
-        <p>Thank you for watching.</p>
-        <p>&copy; Porfolio. All right reserved</p>
+        <p>{t('thank-you')}</p>
+        <p>&copy; {t('all-right-reserved')}</p>
       </Container>
     </React.Fragment>
   )

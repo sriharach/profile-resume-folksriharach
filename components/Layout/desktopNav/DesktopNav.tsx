@@ -1,8 +1,10 @@
+import { useTranslation } from 'next-i18next'
 import React from 'react'
 import styled from 'styled-components'
 import { useNavroutes } from '../routes'
 
 const DesktopNav = () => {
+  const { t } = useTranslation('header')
   return (
     <React.Fragment>
       <Menu className='front-md'>
@@ -11,7 +13,7 @@ const DesktopNav = () => {
             key={routes.id}
             onClick={() => (window.location.href = routes.href)}
           >
-            {routes.name}
+            {t(`${routes.id.toLowerCase()}`)}
           </li>
         ))}
       </Menu>

@@ -4,6 +4,7 @@ import { Card, Input, Form, Button, notification } from 'antd'
 import styled from 'styled-components'
 import { BsLine, BsMailbox, BsPhone } from 'react-icons/bs'
 import emailjs from '@emailjs/browser'
+import { useTranslation } from 'next-i18next'
 
 type TinputForm = {
   name: string
@@ -17,6 +18,7 @@ const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID as string
 const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY as string
 
 const ContactPage = () => {
+  const { t } = useTranslation('common')
   const [sendLoadmail, setSendLoadMail] = useState<boolean>(false)
   const [api, contextHolder] = notification.useNotification()
   const [form] = Form.useForm<TinputForm>()
@@ -30,16 +32,16 @@ const ContactPage = () => {
         setSendLoadMail(false)
         form.resetFields()
         api['success']({
-          message: 'Message sent.',
-          description: 'We have your message sent to the owner.',
+          message: t('contact.message-sent'),
+          description: t('contact.message-description'),
           duration: 3.5,
         })
       }
     } catch (error) {
       console.log('errorSendMail', error)
       api['error']({
-        message: 'Crashes.',
-        description: 'Please contact the administrator.',
+        message: t('contact.message-crashes'),
+        description: t('contact.message-error'),
         duration: 3.5,
       })
       setSendLoadMail(false)
@@ -51,37 +53,37 @@ const ContactPage = () => {
       <div id='contact' />
       <Section>
         <Topic>
-          <h2>Contact me</h2>
-          <p>Get in touch</p>
+          <h2>{t('contact.title')}</h2>
+          <p>{t('contact.sub-title')}</p>
         </Topic>
         <ContactBox>
           <ContactSendWrite>
-            <ContactTitle>Send to me</ContactTitle>
+            <ContactTitle>{t('contact.send-to-me')}</ContactTitle>
             <ContactCard>
               <div>
                 <BsPhone />
               </div>
-              <h3>Phone number</h3>
+              <h3>{t('contact.phone-number')}</h3>
               <p>0963011722</p>
             </ContactCard>
             <ContactCard>
               <div>
                 <BsMailbox />
               </div>
-              <h3>Email</h3>
+              <h3>{t('contact.email')}</h3>
               <p>folksriharach@gmail.com</p>
             </ContactCard>
             <ContactCard>
               <div>
                 <BsLine />
               </div>
-              <h3>Line ID</h3>
+              <h3>{t('contact.line-id')}</h3>
               <p>fspfolk</p>
             </ContactCard>
           </ContactSendWrite>
 
           <ContactSendWrite>
-            <ContactTitle>Write to me</ContactTitle>
+            <ContactTitle>{t('contact.write-to-me')}</ContactTitle>
             <Form
               form={form}
               onFinish={sendMessage}
@@ -92,16 +94,16 @@ const ContactPage = () => {
               }}
             >
               <Form.Item
-                label='Name'
+                label={t('contact.write-input.name')}
                 name='name'
                 rules={[
                   {
                     required: true,
-                    message: 'Please enter name.',
+                    message: `${t('contact.write-input.error-request.name')}`,
                   },
                 ]}
               >
-                <ContactInput placeholder='Enter name' />
+                <ContactInput placeholder={`${t('contact.write-input.placeholder.name')}`} />
               </Form.Item>
               <Form.Item
                 label='Mail'
@@ -109,15 +111,15 @@ const ContactPage = () => {
                 rules={[
                   {
                     type: 'email',
-                    message: 'The input is not valid mail.',
+                    message: `${t('contact.write-input.error-request.input-valid-email')}`,
                   },
                   {
                     required: true,
-                    message: 'Please enter mail.',
+                    message: `${t('contact.write-input.error-request.mail')}`,
                   },
                 ]}
               >
-                <ContactInput placeholder='Enter mail' />
+                <ContactInput placeholder={`${t('contact.write-input.placeholder.mail')}`} />
               </Form.Item>
               <Form.Item
                 label='Phone number'
@@ -129,30 +131,30 @@ const ContactPage = () => {
                       if (typeof value === 'undefined') return
                       return Number(value)
                     },
-                    message: 'The input is not valid phone number.',
+                    message: `${t('contact.write-input.error-request.input-valid-phone-number')}`,
                   },
                   {
                     required: true,
-                    message: 'Please enter phone number.',
+                    message: `${t('contact.write-input.error-request.phone-number')}`,
                   },
                 ]}
               >
-                <ContactInput placeholder='Enter phone number' />
+                <ContactInput placeholder={`${t('contact.write-input.placeholder.phone-number')}`} />
               </Form.Item>
               <Form.Item
-                label='Message'
+                label={t('contact.write-input.message')}
                 name='message'
                 rules={[
                   {
                     required: true,
-                    message: 'Please enter message.',
+                    message: `${t('contact.write-input.error-request.message')}`,
                   },
                 ]}
               >
                 <Input.TextArea
                   style={{ fontSize: '18px' }}
                   rows={4}
-                  placeholder='Enter message'
+                  placeholder={`${t('contact.write-input.placeholder.message')}`}
                 />
               </Form.Item>
               <Form.Item>
@@ -163,7 +165,7 @@ const ContactPage = () => {
                   type='primary'
                   htmlType='submit'
                 >
-                  Send message
+                  {t('contact.write-input.send-message')}
                 </Button>
               </Form.Item>
             </Form>

@@ -1,44 +1,43 @@
-import React from 'react'
 import { Card } from 'antd'
+import React from 'react'
 import styled from 'styled-components'
 import { FcApproval } from 'react-icons/fc'
 import { useTranslation } from 'next-i18next'
 
-const Languages = () => {
+const OtherSkills = () => {
   const { t } = useTranslation('common')
   return (
     <React.Fragment>
       <Card>
-        <LanguagesTitle>My languages</LanguagesTitle>
-        <LanguagesBox>
-          <LanguagesGroup>
-            <LanguagesData>
+        <OtherTitle>Other</OtherTitle>
+        <OtherBox>
+          <OtherGroup>
+            <OtherData>
               <FcApproval />
               <div>
-                <LanguagesName>Englist</LanguagesName>
-                <LanguagesLevel>{t('skills.basic')}</LanguagesLevel>
+                <OtherName>Postgres Database</OtherName>
+                <OtherLevel>{t('skills.intermediate')}</OtherLevel>
               </div>
-            </LanguagesData>
-          </LanguagesGroup>
-
-          <LanguagesGroup>
-            <LanguagesData>
+            </OtherData>
+          </OtherGroup>
+          <OtherGroup>
+            <OtherData>
               <FcApproval />
               <div>
-                <LanguagesName>Thai</LanguagesName>
-                <LanguagesLevel>{t('skills.advanced')}</LanguagesLevel>
+                <OtherName>Postman</OtherName>
+                <OtherLevel>{t('skills.intermediate')}</OtherLevel>
               </div>
-            </LanguagesData>
-          </LanguagesGroup>
-        </LanguagesBox>
+            </OtherData>
+          </OtherGroup>
+        </OtherBox>
       </Card>
     </React.Fragment>
   )
 }
 
-export default Languages
+export default OtherSkills
 
-const LanguagesTitle = styled.h3`
+const OtherTitle = styled.h3`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -48,13 +47,14 @@ const LanguagesTitle = styled.h3`
     font-size: 16px;
   }
 `
-const LanguagesBox = styled.div`
+
+const OtherBox = styled.div`
   display: flex;
   justify-content: center;
   column-gap: 3rem;
 `
 
-const LanguagesGroup = styled.div`
+const OtherGroup = styled.div`
   display: grid;
   align-items: flex-start;
   row-gap: 1rem;
@@ -65,7 +65,7 @@ const LanguagesGroup = styled.div`
   }
 `
 
-const LanguagesData = styled.div`
+const OtherData = styled.div`
   display: flex;
   column-gap: 0.5rem;
 
@@ -73,8 +73,7 @@ const LanguagesData = styled.div`
     font-size: 1.4rem;
   }
 `
-
-const LanguagesName = styled.h3`
+const OtherName = styled.h3`
   font-size: 20px;
   font-weight: bold;
   line-height: 18px;
@@ -83,7 +82,7 @@ const LanguagesName = styled.h3`
     font-size: 14px;
   }
 `
-const LanguagesLevel = styled.span`
+const OtherLevel = styled.span`
   font-size: small;
   color: #757575fa;
 

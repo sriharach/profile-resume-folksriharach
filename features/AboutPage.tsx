@@ -4,9 +4,11 @@ import { Button, Card } from 'antd'
 import { BiAward, BiBriefcaseAlt, BiSupport } from 'react-icons/bi'
 import { DownloadOutlined } from '@ant-design/icons'
 import useMedia from 'use-media'
+import { useTranslation } from 'next-i18next'
 import { theme } from '@/styles/styled-component-theme'
 
 const AboutPage = () => {
+  const { t } = useTranslation('common')
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
 
   const handleDownload = () => {
@@ -30,8 +32,8 @@ const AboutPage = () => {
       <div id='about' />
       <Section>
         <Topic>
-          <h2>About me</h2>
-          <p>My introduction</p>
+          <h2>{t('about.title')}</h2>
+          <p>{t('about.sub-title')}</p>
         </Topic>
         <Grid>
           <Yourself />
@@ -41,29 +43,62 @@ const AboutPage = () => {
                 <div>
                   <BiAward />
                 </div>
-                <span>Experience</span>
-                <dd>1 year working</dd>
+                <span>{t('about.box.experience')}</span>
+                <dd>{t('about.box.sub-experience')}</dd>
               </InlineBox>
               <InlineBox>
                 <div>
                   <BiBriefcaseAlt />
                 </div>
-                <span>Completes</span>
-                <dd>6+ Projects</dd>
+                <span>{t('about.box.completes')}</span>
+                <dd>{t('about.box.sub-completes')}</dd>
               </InlineBox>
               <InlineBox>
                 <div>
                   <BiSupport />
                 </div>
-                <span>Support</span>
-                <dd>No idea</dd>
+                <span>{t('about.box.support')}</span>
+                <dd>{t('about.box.sub-support')}</dd>
               </InlineBox>
             </Box>
             <div>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt
-              possimus vero, nihil repellat illum, rerum sunt corporis
-              reprehenderit commodi facere alias nesciunt dicta, quod saepe
-              dolorem vel beatae nemo eos.
+              <p>
+                {t('about.topic.my-name')}:{' '}
+                <span>{t('about.des.my-name')}</span>
+              </p>
+              <p>
+                {t('about.topic.birthday')}:{' '}
+                <span>{t('about.des.birthday')}</span>
+              </p>
+              <p>
+                {t('about.topic.gender')}: <span>{t('about.des.gender')}</span>
+              </p>
+              <p>
+                {t('about.topic.marital')}:{' '}
+                <span>{t('about.des.marital')}</span>
+              </p>
+              <p>
+                {t('about.topic.height')}: <span>{t('about.des.height')}</span>
+              </p>
+              <p>
+                {t('about.topic.weight')}: <span>{t('about.des.weight')}</span>
+              </p>
+              <p>
+                {t('about.topic.nationality')}:{' '}
+                <span>{t('about.des.nationality')}</span>
+              </p>
+              <p>
+                {t('about.topic.religion')}:{' '}
+                <span>{t('about.des.religion')}</span>
+              </p>
+              <p>
+                {t('about.topic.military')}:{' '}
+                <span>{t('about.des.military')}</span>
+              </p>
+              <p>
+                {t('about.topic.address')}:{' '}
+                <span>{t('about.des.address')}</span>
+              </p>
             </div>
             <div>
               <Button
@@ -76,7 +111,7 @@ const AboutPage = () => {
                 block={isWideLg}
                 icon={<DownloadOutlined />}
               >
-                Download Transcript
+                {t('about.btn-download')}
               </Button>
             </div>
           </DetailContent>

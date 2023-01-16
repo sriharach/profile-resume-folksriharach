@@ -1,27 +1,29 @@
 import { Card } from 'antd'
+import { useTranslation } from 'next-i18next'
 import React from 'react'
 import { FcApproval } from 'react-icons/fc'
 import styled from 'styled-components'
 
 const Frontend = () => {
+  const { t } = useTranslation('common')
   const front_skills1 = [
     {
       skill_name: 'React',
-      skill_level: 'Intermediate',
+      skill_level: t('skills.intermediate'),
     },
     {
-      skill_name: 'Next',
-      skill_level: 'Intermediate',
+      skill_name: 'Next.js',
+      skill_level: t('skills.intermediate'),
     },
   ]
   const front_skills2 = [
     {
       skill_name: 'React Native',
-      skill_level: 'Basic',
+      skill_level: t('skills.basic'),
     },
     {
       skill_name: 'Javascript',
-      skill_level: 'Advanced',
+      skill_level: t('skills.advanced'),
     },
   ]
   return (

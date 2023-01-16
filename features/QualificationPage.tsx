@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { BiBook, BiBriefcaseAlt2 } from 'react-icons/bi'
 import styled from 'styled-components'
 import useMedia from 'use-media'
+import { useTranslation } from 'next-i18next'
 import { theme } from '@/styles/styled-component-theme'
 
 enum Eeducation {
@@ -18,6 +19,7 @@ enum EstatusQualification {
 }
 
 const QualificationPage = () => {
+  const { t } = useTranslation('common')
   const isWideMd = useMedia({ maxWidth: `${theme.breakpoints.md.value}px` })
 
   const educations = [
@@ -33,7 +35,7 @@ const QualificationPage = () => {
         education_course: 'บริหารธุรกิจบัณฑิต',
         education_major: 'คอมพิวเตอร์ธุรกิจ',
         education_grade: '2.63',
-        education_year: '2557',
+        education_year: '2564',
       },
     },
     {
@@ -119,14 +121,14 @@ const QualificationPage = () => {
       <div id='qualification' />
       <Section>
         <Topic>
-          <h2>Qualification</h2>
+          <h2>{t('qualification.title')}</h2>
           <div style={{ display: 'inline-flex', columnGap: 6 }}>
-            <p>My qualification</p>
+            <p>{t('qualification.sub-title')}</p>
             <Tooltip
               color='#111d2c'
               title={
                 <React.Fragment>
-                  More details can be found 'Education' and 'Experience'{' '}
+                  {t('qualification.sub-title-?')}
                 </React.Fragment>
               }
             >
@@ -135,15 +137,15 @@ const QualificationPage = () => {
           </div>
         </Topic>
         <QualificationContainer>
-          <QualificationBox>
-            <QualificationTap
-              onClick={() => {
-                setModalOpen(true)
-                setStatus('EDUCATION')
-              }}
-            >
+          <QualificationBox
+            onClick={() => {
+              setModalOpen(true)
+              setStatus('EDUCATION')
+            }}
+          >
+            <QualificationTap>
               <BiBook />
-              <b>Education</b>
+              <b>{t('qualification.education')}</b>
             </QualificationTap>
             <Timeline
               style={{ width: '100%' }}
@@ -159,15 +161,15 @@ const QualificationPage = () => {
             </Timeline>
           </QualificationBox>
           {isWideMd && <Divider />}
-          <QualificationBox>
-            <QualificationTap
-              onClick={() => {
-                setModalOpen(true)
-                setStatus('EXPERIENCE')
-              }}
-            >
+          <QualificationBox
+            onClick={() => {
+              setModalOpen(true)
+              setStatus('EXPERIENCE')
+            }}
+          >
+            <QualificationTap>
               <BiBriefcaseAlt2 />
-              <b>Experience</b>
+              <b>{t('qualification.experience')}</b>
             </QualificationTap>
             <Timeline
               style={{ width: '100%' }}
@@ -190,9 +192,11 @@ const QualificationPage = () => {
         footer={false}
         focusTriggerAfterClose={false}
         title={
-          <b style={{ fontSize: '18px' }}>{`Additional ${
-            status === 'EDUCATION' ? 'study' : 'experience'
-          }  information`}</b>
+          <b style={{ fontSize: '18px' }}>
+            {status === 'EDUCATION'
+              ? t('qualification.additional-study-information')
+              : t('qualification.additional-experience-information')}
+          </b>
         }
         centered
         width={640}
@@ -212,7 +216,7 @@ const QualificationPage = () => {
                     </p>
                     <p>คณะวิชา: {education.full_education.education_group}</p>
                     <p>สาขา: {education.full_education.education_major}</p>
-                    <p>เกรด: {education.full_education.education_grade}</p>
+                    {/* <p>เกรด: {education.full_education.education_grade}</p> */}
                   </div>
                 </Timeline.Item>
               ))}
@@ -280,6 +284,25 @@ const QualificationContainer = styled.div<{
 `
 
 const QualificationBox = styled.div`
+  :hover {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    div {
+      font-size: 17px;
+      transition: all 0.3s ease;
+      b {
+        font-size: 17px;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  .ant-timeline .ant-timeline-item {
+    cursor: pointer;
+  }
+
   ${(props) => props.theme.breakpoints.md.down} {
     min-width: 540px;
   }
@@ -290,11 +313,6 @@ const QualificationBox = styled.div`
 `
 
 const QualificationTap = styled.div`
-  :hover {
-    color: #988154;
-    cursor: pointer;
-  }
-
   display: flex;
   align-items: center;
   justify-content: center;

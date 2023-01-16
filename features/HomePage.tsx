@@ -5,8 +5,11 @@ import {
   GithubOutlined,
   InstagramOutlined,
 } from '@ant-design/icons'
+import { useTranslation } from 'next-i18next'
 
 const HomePage = () => {
+  const { t } = useTranslation('common')
+
   return (
     <React.Fragment>
       <div id='home' />
@@ -38,15 +41,11 @@ const HomePage = () => {
           />
         </Social>
         <Content>
-          <h1>Sriharach Promruksa</h1>
-          <span>Hello, I&apos;m the developer</span>
-          <br />
-          <span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-            nostrum quidem reiciendis ipsa earum in, accusamus optio nulla
-            deleniti maiores vel voluptas dolore, et sit non inventore iure
-            maxime explicabo.
-          </span>
+          <h1>{t('home.name')}</h1>
+          <span>{t('home.message')}</span>
+          <p>
+            {t('home.guide')}
+          </p>
         </Content>
         <Yourself />
       </Grid>
@@ -102,7 +101,11 @@ const Social = styled.div`
   font-size: 1.25rem;
 
   svg {
-    cursor: pointer;
+    :hover {
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
   }
 
   ${(props) => props.theme.breakpoints.md.down} {

@@ -2,33 +2,37 @@ import React from 'react'
 import styled from 'styled-components'
 import { Divider } from 'antd'
 import useMedia from 'use-media'
+import { useTranslation } from 'next-i18next'
 import Frontend from './Frontend'
 import Backend from './Backend'
 import Languages from './Languages'
+import OtherSkills from './OtherSkills'
 import { theme } from '@/styles/styled-component-theme'
 
 const SkillsPage = () => {
+  const { t } = useTranslation('common')
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
   return (
     <React.Fragment>
       <div id='skills' />
       <Section>
         <Topic>
-          <h2>Skills</h2>
-          <p>My technical level</p>
+          <h2>{t('skills.title')}</h2>
+          <p>{t('skills.sub-title')}</p>
         </Topic>
         <SkillCodeingBox>
           <Divider orientation='left' orientationMargin={isWideLg ? 0 : 50}>
-            <h2>Coding Skills</h2>
+            <h2>{t('skills.coding-skills')}</h2>
           </Divider>
           <CodingBox>
             <Frontend />
             <Backend />
+            <OtherSkills />
           </CodingBox>
         </SkillCodeingBox>
         <SkillLanguages>
           <Divider orientation='left' orientationMargin={isWideLg ? 0 : 50}>
-            <h2>Languages Skills</h2>
+            <h2>{t('skills.languages-skills')}</h2>
           </Divider>
           <LanguagesBox>
             <Languages />
@@ -55,7 +59,7 @@ const Topic = styled.div`
 const CodingBox = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 480px);
-  column-gap: 3rem;
+  gap: 3rem;
   justify-content: center;
 
   ${(props) => props.theme.breakpoints.lg.down} {

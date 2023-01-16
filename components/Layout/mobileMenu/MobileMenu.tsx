@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Button, Drawer } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
 import { useNavroutes } from '../routes'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 const MobileMenu = () => {
   const [isDrawer, setIsDrawer] = React.useState(false)
@@ -11,17 +12,14 @@ const MobileMenu = () => {
 
   return (
     <React.Fragment>
-      <IconButton
-        type='text'
-        icon={<MenuOutlined />}
-        onClick={handleDrawer}
-      />
+      <IconButton type='text' icon={<MenuOutlined />} onClick={handleDrawer} />
       <DrawerAntd
         open={isDrawer}
         placement='bottom'
         onClose={closeDrawer}
         height={300}
       >
+        <LanguageSwitcher />
         <Menu className='front-md'>
           {useNavroutes.map((routes) => (
             <li
@@ -53,6 +51,9 @@ const DrawerAntd = styled(Drawer)`
     }
   }
   border-radius: 14px 14px 0px 0px;
+  .ant-drawer-body {
+    padding: 0 2rem;
+  }
   .ant-drawer-header {
     border-bottom: none;
     .ant-drawer-header-title {

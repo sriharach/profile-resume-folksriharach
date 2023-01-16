@@ -1,0 +1,97 @@
+{
+    "home": {
+        "name": "Sriharach Promruksa",
+        "message": "Hello, I'm the developer.",
+        "guide": "The portfolio of this website is all my work you can click the link of the navbar above or scroll down to see the portfolio."
+    },
+    "about": {
+        "title": "About me",
+        "sub-title": "Introduce yourself",
+        "btn-download": "Download Transcript",
+        "box": {
+            "experience": "Experience",
+            "sub-experience": "1 year working",
+            "completes": "Completes",
+            "sub-completes": "6+ Projects",
+            "support": "Support",
+            "sub-support": "Do not have yet"
+        },
+        "topic": {
+            "my-name": "My name",
+            "birthday": "Birthday",
+            "gender": "Gender",
+            "marital": "Marital",
+            "height": "Height",
+            "weight": "Weight",
+            "nationality": "Nationality",
+            "religion": "Religion",
+            "military": "Military",
+            "address": "Address"
+        },
+        "des": {
+            "my-name": "Sriharach Promruksa",
+            "birthday": "22 August 2541",
+            "gender": "Male",
+            "marital": "Single",
+            "height": "175 cm.",
+            "weight": "58 kg.",
+            "nationality": "Thai",
+            "religion": "Buddhism",
+            "military": "Finished Reserved Officers Training Corps Course (R.O.T.C.)",
+            "address": "49/141 Hathairat 35 Rd. Khlongsamwa Khwaeng Sam Wa Tawan Tok 10510 Bangkok"
+        }
+    },
+    "skills": {
+        "title": "Skills",
+        "sub-title": "My technical level",
+        "coding-skills": "Coding Skills",
+        "languages-skills": "Languages Skills",
+        "beginner": "Beginner",
+        "basic": "Basic",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+    },
+    "qualification": {
+        "title": "Qualification",
+        "sub-title": "My qualification",
+        "sub-title-?": "More details can be found Education and Experience",
+        "education": "Education",
+        "experience": "Experience",
+        "additional-experience-information": "Additional experience information",
+        "additional-study-information": "Additional study information"
+    },
+    "contact": {
+        "title": "Contact me",
+        "sub-title": "Get in touch",
+        "send-to-me": "Send to me",
+        "write-to-me": "Write to me",
+        "phone-number": "Phone number",
+        "email": "Email",
+        "line-id": "Line ID",
+        "write-input": {
+            "name": "Name",
+            "mail": "Mail",
+            "phone-number": "Phone number",
+            "message": "Message",
+            "send-message": "Send message",
+            "error-request": {
+                "name": "Please enter name.",
+                "mail": "Please enter mail.",
+                "phone-number": "Please enter phone number.",
+                "message": "Please enter message.",
+                "input-valid-email": "The input is not valid mail.",
+                "input-valid-phone-number": "The input is not valid phone number."
+            },
+            "placeholder": {
+                "name": "Enter name",
+                "mail": "Enter mail",
+                "phone-number": "Enter phone number",
+                "message": "Enter message"
+            }
+        },
+        "message-sent": "Message sent.",
+        "message-description": "We have your message sent to the owner.",
+        "message-crashes": "Crashes!!",
+        "message-error": "Please contact the administrator."
+    }
+}
