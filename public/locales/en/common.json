@@ -49,7 +49,9 @@
         "beginner": "Beginner",
         "basic": "Basic",
         "intermediate": "Intermediate",
-        "advanced": "Advanced"
+        "advanced": "Advanced",
+        "my-languages": "My languages",
+        "other": "Other"
     },
     "qualification": {
         "title": "Qualification",

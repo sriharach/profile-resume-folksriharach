@@ -49,7 +49,9 @@
         "beginner": "ระดับเริ่มต้น",
         "basic": "ขั้นพื้นฐาน",
         "intermediate": "ระดับกลาง",
-        "advanced": "ระดับสูง"
+        "advanced": "ระดับสูง",
+        "my-languages": "ภาษาของฉัน",
+        "other": "อื่นๆ"
     },
     "qualification": {
         "title": "คุณสมบัติ",

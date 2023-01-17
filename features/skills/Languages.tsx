@@ -9,7 +9,7 @@ const Languages = () => {
   return (
     <React.Fragment>
       <Card>
-        <LanguagesTitle>My languages</LanguagesTitle>
+        <LanguagesTitle>{t('skills.my-languages')}</LanguagesTitle>
         <LanguagesBox>
           <LanguagesGroup>
             <LanguagesData>

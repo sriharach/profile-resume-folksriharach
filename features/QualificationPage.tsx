@@ -305,10 +305,30 @@ const QualificationBox = styled.div`
 
   ${(props) => props.theme.breakpoints.md.down} {
     min-width: 540px;
+    :hover {
+      padding: 0px;
+
+      div {
+        font-size: 14px;
+        b {
+          font-size: 17px;
+        }
+      }
+    }
   }
 
   ${(props) => props.theme.breakpoints.sm.down} {
     min-width: auto;
+    :hover {
+      padding: 0px;
+
+      div {
+        font-size: 14px;
+        b {
+          font-size: 17px;
+        }
+      }
+    }
   }
 `
 

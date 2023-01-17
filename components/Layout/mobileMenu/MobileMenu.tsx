@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button, Drawer } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
+import { useTranslation } from 'next-i18next'
 import { useNavroutes } from '../routes'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 const MobileMenu = () => {
+  const { t } = useTranslation('header')
   const [isDrawer, setIsDrawer] = React.useState(false)
   const handleDrawer = () => setIsDrawer(true)
   const closeDrawer = () => setIsDrawer(false)
@@ -20,13 +22,13 @@ const MobileMenu = () => {
         height={300}
       >
         <LanguageSwitcher />
-        <Menu className='front-md'>
+        <Menu>
           {useNavroutes.map((routes) => (
             <li
               key={routes.id}
               onClick={() => (window.location.href = routes.href)}
             >
-              {routes.name}
+              {t(`${routes.id.toLowerCase()}`)}
             </li>
           ))}
         </Menu>

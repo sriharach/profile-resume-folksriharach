@@ -106,7 +106,7 @@ const ContactPage = () => {
                 <ContactInput placeholder={`${t('contact.write-input.placeholder.name')}`} />
               </Form.Item>
               <Form.Item
-                label='Mail'
+                label={t('contact.write-input.mail')}
                 name='mail'
                 rules={[
                   {
@@ -122,7 +122,7 @@ const ContactPage = () => {
                 <ContactInput placeholder={`${t('contact.write-input.placeholder.mail')}`} />
               </Form.Item>
               <Form.Item
-                label='Phone number'
+                label={t('contact.write-input.phone-number')}
                 name='phone_number'
                 rules={[
                   {

@@ -9,7 +9,7 @@ const OtherSkills = () => {
   return (
     <React.Fragment>
       <Card>
-        <OtherTitle>Other</OtherTitle>
+        <OtherTitle>{t('skills.other')}</OtherTitle>
         <OtherBox>
           <OtherGroup>
             <OtherData>
