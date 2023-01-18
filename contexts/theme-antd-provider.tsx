@@ -7,6 +7,7 @@ const ThemeAntdProvider = ({ children }: NextChildren) => {
       theme={{
         token: {
           colorPrimary: '#35363dfd',
+          fontFamily: 'Kanit',
         },
       }}
     >

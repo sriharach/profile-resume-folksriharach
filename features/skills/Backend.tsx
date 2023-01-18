@@ -17,7 +17,7 @@ const Backend = () => {
     },
     {
       skill_name: 'Linux',
-      skill_level: t('skills.beginner'),
+      skill_level: t('skills.basic'),
     },
   ]
   const skill_backend2 = [
