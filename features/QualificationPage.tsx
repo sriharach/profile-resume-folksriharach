@@ -50,7 +50,7 @@ const QualificationPage = () => {
         education_course: 'วิชาพาณิชยกรรม',
         education_major: 'คอมพิวเตอร์ธุรกิจ',
         education_grade: '2.19',
-        education_year: '2557',
+        education_year: '2560',
       },
     },
     {
