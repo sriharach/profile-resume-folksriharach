@@ -2,7 +2,8 @@
     "home": {
         "name": "Sriharach Promruksa",
         "message": "Hello, I'm the developer.",
-        "guide": "The portfolio of this website is all my work you can click the link of the navbar above or scroll down to see the portfolio."
+        "guide": "The portfolio of this website is all my work you can click the link of the navbar above or scroll down to see the portfolio.",
+        "documect-resume": "Documect resume"
     },
     "about": {
         "title": "About me",

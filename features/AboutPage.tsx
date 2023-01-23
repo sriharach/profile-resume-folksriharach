@@ -13,7 +13,7 @@ const AboutPage = () => {
 
   const handleDownload = () => {
     const time = new Date()
-    fetch('transcript.pdf').then((res) => {
+    fetch('assets/transcript.pdf').then((res) => {
       res.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
         // Setting various property values
@@ -63,6 +63,9 @@ const AboutPage = () => {
             </Box>
             <div>
               <p>
+                
+              </p>
+              <p>
                 {t('about.topic.my-name')}:{' '}
                 <span>{t('about.des.my-name')}</span>
               </p>
@@ -106,6 +109,7 @@ const AboutPage = () => {
                 style={{
                   height: isWideLg ? '40px' : '56px',
                   borderRadius: '0.8rem',
+                  minWidth: '210px'
                 }}
                 type='primary'
                 block={isWideLg}

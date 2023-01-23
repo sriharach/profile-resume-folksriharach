@@ -22,6 +22,10 @@
     color: #fff
     left: 10%
 
+    @media screen and (max-width: 576px)
+        font-size: 14px
+        left: 50px
+
 .circle
     width: 20px
     height: 20px
@@ -32,14 +36,26 @@
     transform-origin: 50%
     animation: load-circle .5s alternate infinite ease
 
+    @media screen and (max-width: 576px)
+        left: 26%
+        width: 15px
+        height: 15px
+
 .circle:nth-child(2)
     left: 45%
     animation-delay: .2s
+
+    @media screen and (max-width: 576px)
+        left: 48%
 
 .circle:nth-child(3)
     left: auto
     right: 15%
     animation-delay: .3s
+
+    @media screen and (max-width: 576px)
+        left: auto
+        right: 24%
 
 // .shadow
 //     width: 20px

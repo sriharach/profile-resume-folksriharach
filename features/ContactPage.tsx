@@ -78,7 +78,7 @@ const ContactPage = () => {
                 <BsLine />
               </div>
               <h3>{t('contact.line-id')}</h3>
-              <p>fspfolk</p>
+              <p>folk7154</p>
             </ContactCard>
           </ContactSendWrite>
 

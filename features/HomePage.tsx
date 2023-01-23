@@ -1,14 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  DownloadOutlined,
   FacebookOutlined,
   GithubOutlined,
   InstagramOutlined,
 } from '@ant-design/icons'
 import { useTranslation } from 'next-i18next'
+import { Button } from 'antd'
+import useMedia from 'use-media'
+import { theme } from '@/styles/styled-component-theme'
 
 const HomePage = () => {
   const { t } = useTranslation('common')
+  const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
+
+  const handleLoadresume = () => {
+    fetch('assets/ResumeInThai-professional.pdf').then((res) => {
+      res.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob)
+        // Setting various property values
+        const alink = document.createElement('a')
+        alink.href = fileURL
+        alink.download = `ResumeInThai-professional`
+        alink.click()
+      })
+    })
+  }
 
   return (
     <React.Fragment>
@@ -43,9 +61,21 @@ const HomePage = () => {
         <Content>
           <h1>{t('home.name')}</h1>
           <span>{t('home.message')}</span>
-          <p>
-            {t('home.guide')}
-          </p>
+          <p>{t('home.guide')}</p>
+          <Button
+            onClick={handleLoadresume}
+            block={isWideLg}
+            style={{
+              height: isWideLg ? '40px' : '56px',
+              borderRadius: '0.8rem',
+              minWidth: '210px',
+            }}
+            type='primary'
+            // block={isWideLg}
+            icon={<DownloadOutlined />}
+          >
+            {t('home.documect-resume')}
+          </Button>
         </Content>
         <Yourself />
       </Grid>
@@ -76,18 +106,27 @@ const Grid = styled.div`
 `
 
 const Content = styled.div`
+  .ant-btn {
+    margin-top: 56px;
+  }
   h1 {
     font-size: 46px;
     font-weight: bold;
   }
 
   ${(props) => props.theme.breakpoints.lg.down} {
+    .ant-btn.ant-btn-block {
+      margin-top: 2rem;
+    }
     h1 {
       font-size: 36px;
     }
   }
 
   ${(props) => props.theme.breakpoints.md.down} {
+    button {
+      margin-top: 0;
+    }
     h1 {
       font-size: 28px;
     }
