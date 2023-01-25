@@ -20,6 +20,10 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'warn',
     'no-empty-function': 'off',
     'react/no-unescaped-entities': 'off',
-    '@next/next/no-page-custom-font': 'off'
+    '@next/next/no-page-custom-font': 'off',
+    'import/no-unresolved': [
+      2, 
+      { "caseSensitive": false }
+   ]
   },
 }

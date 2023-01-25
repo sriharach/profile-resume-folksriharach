@@ -140,10 +140,10 @@ const Social = styled.div`
   font-size: 1.25rem;
 
   svg {
+    transition: all 0.3s ease;
     :hover {
       cursor: pointer;
       font-size: 1.5rem;
-      transition: all 0.3s ease;
     }
   }
 

@@ -284,17 +284,21 @@ const QualificationContainer = styled.div<{
 `
 
 const QualificationBox = styled.div`
+  transition: all 0.3s ease;
+  div {
+    transition: all 0.3s ease;
+    b {
+      transition: all 0.3s ease;
+    }
+  }
   :hover {
     padding: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
 
     div {
       font-size: 17px;
-      transition: all 0.3s ease;
       b {
         font-size: 17px;
-        transition: all 0.3s ease;
       }
     }
   }
