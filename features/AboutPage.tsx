@@ -63,9 +63,6 @@ const AboutPage = () => {
             </Box>
             <div>
               <p>
-                
-              </p>
-              <p>
                 {t('about.topic.my-name')}:{' '}
                 <span>{t('about.des.my-name')}</span>
               </p>
@@ -151,7 +148,7 @@ const Topic = styled.div`
   }
 `
 const Yourself = styled.div`
-  background-image: url('img/ITME.jpeg');
+  background-image: url('img/img-profile.jpeg');
   background-position: center;
   background-size: cover;
   border-radius: 1.5rem;

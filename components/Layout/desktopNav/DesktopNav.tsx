@@ -11,7 +11,9 @@ const DesktopNav = () => {
         {useNavroutes.map((routes) => (
           <li
             key={routes.id}
-            onClick={() => (window.location.href = routes.href)}
+            onClick={() => {
+              window.location.href = routes.href
+            }}
           >
             {t(`${routes.id.toLowerCase()}`)}
           </li>

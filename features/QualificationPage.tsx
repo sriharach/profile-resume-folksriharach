@@ -80,7 +80,9 @@ const QualificationPage = () => {
         period: 'พฤษภาคม 2565 ถึง ปัจจุบัน',
         address:
           '2525 อาคารเอฟวายไอเซ็นเตอร์ 2 ชั้น 11 ถนนพระรามที่ 4 แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110',
-        detail_working: `พัฒนาส่วนที่เกี่ยวกับเหรียญดิจิทัจ NFT และเชื่อมต่อ Metamask ภายในองค์กร`,
+        detail_working: `พัฒนาเชื่อมต่อ Smart contract เพื่อใช้ในการทำเหรียญดิจิทัล โดยใช้ Metamask
+        ในการเก็บเหรียญ พัฒนาฝั่งเบื้องหลังให้มีความสัมพันธ์ที่ตรงกันและเก็บประวัติข้อมูลจาการ
+        Payment บน Smart contract`,
       },
     },
     {
@@ -194,8 +196,8 @@ const QualificationPage = () => {
         title={
           <b style={{ fontSize: '18px' }}>
             {status === 'EDUCATION'
-              ? t('qualification.additional-study-information')
-              : t('qualification.additional-experience-information')}
+              ? t('qualification.study-information')
+              : t('qualification.experience-information')}
           </b>
         }
         centered

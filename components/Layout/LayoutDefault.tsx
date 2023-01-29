@@ -21,7 +21,7 @@ const LayoutDefault = ({ children }: NextChildren) => {
     if (isPayLoad) {
       setTimeout(() => {
         setLoadind(false)
-      }, 3000)
+      }, 2500)
     }
 
     return () => {

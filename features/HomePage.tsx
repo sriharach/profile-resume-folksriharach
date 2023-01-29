@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
+  DeploymentUnitOutlined,
   DownloadOutlined,
-  FacebookOutlined,
   GithubOutlined,
   InstagramOutlined,
 } from '@ant-design/icons'
@@ -16,13 +16,13 @@ const HomePage = () => {
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
 
   const handleLoadresume = () => {
-    fetch('assets/ResumeInThai-professional.pdf').then((res) => {
+    fetch('assets/Sriharach-resume.pdf').then((res) => {
       res.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
         // Setting various property values
         const alink = document.createElement('a')
         alink.href = fileURL
-        alink.download = `ResumeInThai-professional`
+        alink.download = `Sriharach-resume`
         alink.click()
       })
     })
@@ -49,14 +49,23 @@ const HomePage = () => {
               a.click()
             }}
           />
-          <FacebookOutlined
+          <DeploymentUnitOutlined
+            onClick={() => {
+              const a = document.createElement('a')
+              a.href =
+                'https://github.com/sriharach/profile-resume-folksriharach'
+              a.target = '_blank'
+              a.click()
+            }}
+          />
+          {/* <FacebookOutlined
             onClick={() => {
               const a = document.createElement('a')
               a.href = 'https://www.facebook.com/folksriharach'
               a.target = '_blank'
               a.click()
             }}
-          />
+          /> */}
         </Social>
         <Content>
           <h1>{t('home.name')}</h1>
@@ -71,7 +80,6 @@ const HomePage = () => {
               minWidth: '210px',
             }}
             type='primary'
-            // block={isWideLg}
             icon={<DownloadOutlined />}
           >
             {t('home.documect-resume')}
@@ -155,9 +163,9 @@ const Social = styled.div`
 `
 
 const Yourself = styled.div`
-  background-image: url('img/ITME.jpeg');
+  background-image: url('img/main-profile.jpeg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   box-shadow: inset 0 0 0 9px rgb(255 255 255/ 30%);
   width: 300px;
