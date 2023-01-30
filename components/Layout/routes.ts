@@ -17,11 +17,6 @@ export const useNavroutes = [
         href: '#skills'
     },
     {
-        id: 'QUALIFICATION',
-        name: 'Qualification',
-        href: '#qualification'
-    },
-    {
         id: 'CONTACT',
         name: 'Contact',
         href: '#contact'

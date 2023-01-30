@@ -7,7 +7,7 @@
     },
     "about": {
         "title": "About me",
-        "sub-title": "Introduce yourself",
+        "sub-title": "My information",
         "btn-download": "Download Transcript",
         "box": {
             "experience": "Experience",
@@ -40,6 +40,14 @@
             "religion": "Buddhism",
             "military": "Finished Reserved Officers Training Corps Course (R.O.T.C.)",
             "address": "Khlongsamwa Khwaeng Sam Wa Tawan Tok 10510 Bangkok"
+        },
+        "experiences": {
+            "title": "Work experiences & Education",
+            "sub-title-?": "More details can be found Education and Experiences",
+            "education": "Education",
+            "experience": "Experiences",
+            "experience-information": "Experiences information",
+            "study-information": "Study information"
         }
     },
     "skills": {
@@ -53,15 +61,6 @@
         "advanced": "Advanced",
         "my-languages": "My languages",
         "other": "Other"
-    },
-    "qualification": {
-        "title": "Qualification",
-        "sub-title": "My qualification",
-        "sub-title-?": "More details can be found Education and Experience",
-        "education": "Education",
-        "experience": "Experience",
-        "experience-information": "Experience information",
-        "study-information": "Study information"
     },
     "contact": {
         "title": "Contact me",

@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Card } from 'antd'
+import { Button, Card, Tooltip } from 'antd'
 import { BiAward, BiBriefcaseAlt, BiSupport } from 'react-icons/bi'
-import { DownloadOutlined } from '@ant-design/icons'
+import { DownloadOutlined, QuestionCircleOutlined } from '@ant-design/icons'
 import useMedia from 'use-media'
 import { useTranslation } from 'next-i18next'
+import Experiences from './Experiences'
 import { theme } from '@/styles/styled-component-theme'
 
 const AboutPage = () => {
@@ -33,7 +34,19 @@ const AboutPage = () => {
       <Section>
         <Topic>
           <h2>{t('about.title')}</h2>
-          <p>{t('about.sub-title')}</p>
+          <div style={{ display: 'inline-flex', columnGap: 6 }}>
+            <p>{t('about.sub-title')}</p>
+            <Tooltip
+              color='#111d2c'
+              title={
+                <React.Fragment>
+                  {t('about.experiences.sub-title-?')}
+                </React.Fragment>
+              }
+            >
+              <QuestionCircleOutlined />
+            </Tooltip>
+          </div>
         </Topic>
         <Grid>
           <Yourself />
@@ -106,7 +119,7 @@ const AboutPage = () => {
                 style={{
                   height: isWideLg ? '40px' : '56px',
                   borderRadius: '0.8rem',
-                  minWidth: '210px'
+                  minWidth: '210px',
                 }}
                 type='primary'
                 block={isWideLg}
@@ -117,6 +130,7 @@ const AboutPage = () => {
             </div>
           </DetailContent>
         </Grid>
+        <Experiences />
       </Section>
     </React.Fragment>
   )

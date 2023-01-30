@@ -1,5 +1,4 @@
-import { QuestionCircleOutlined } from '@ant-design/icons'
-import { Timeline, Modal, Tooltip, Divider } from 'antd'
+import { Timeline, Modal, Divider } from 'antd'
 import React, { useState } from 'react'
 import { BiBook, BiBriefcaseAlt2 } from 'react-icons/bi'
 import styled from 'styled-components'
@@ -18,9 +17,10 @@ enum EstatusQualification {
   EXPERIENCE = 'EXPERIENCE',
 }
 
-const QualificationPage = () => {
+const Experiences = () => {
   const { t } = useTranslation('common')
   const isWideMd = useMedia({ maxWidth: `${theme.breakpoints.md.value}px` })
+  const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
 
   const educations = [
     {
@@ -120,73 +120,57 @@ const QualificationPage = () => {
 
   return (
     <React.Fragment>
-      <div id='qualification' />
-      <Section>
-        <Topic>
-          <h2>{t('qualification.title')}</h2>
-          <div style={{ display: 'inline-flex', columnGap: 6 }}>
-            <p>{t('qualification.sub-title')}</p>
-            <Tooltip
-              color='#111d2c'
-              title={
-                <React.Fragment>
-                  {t('qualification.sub-title-?')}
-                </React.Fragment>
-              }
-            >
-              <QuestionCircleOutlined />
-            </Tooltip>
-          </div>
-        </Topic>
-        <QualificationContainer>
-          <QualificationBox
-            onClick={() => {
-              setModalOpen(true)
-              setStatus('EDUCATION')
-            }}
+      <Divider orientation='left' orientationMargin={isWideLg ? 0 : 50}>
+        <h2>{t('about.experiences.title')}</h2>
+      </Divider>
+      <QualificationContainer>
+        <QualificationBox
+          onClick={() => {
+            setModalOpen(true)
+            setStatus('EDUCATION')
+          }}
+        >
+          <QualificationTap>
+            <BiBook />
+            <b>{t('about.experiences.education')}</b>
+          </QualificationTap>
+          <Timeline
+            style={{ width: '100%' }}
+            mode={isWideMd ? 'alternate' : 'right'}
           >
-            <QualificationTap>
-              <BiBook />
-              <b>{t('qualification.education')}</b>
-            </QualificationTap>
-            <Timeline
-              style={{ width: '100%' }}
-              mode={isWideMd ? 'alternate' : 'right'}
-            >
-              {educations.map((education, i) => (
-                <Timeline.Item key={i} color='#49aa19'>
-                  <p>{education.year}</p>
-                  <p>{education.education_level}</p>
-                  <p>{education.academy_name}</p>
-                </Timeline.Item>
-              ))}
-            </Timeline>
-          </QualificationBox>
-          {isWideMd && <Divider />}
-          <QualificationBox
-            onClick={() => {
-              setModalOpen(true)
-              setStatus('EXPERIENCE')
-            }}
+            {educations.map((education, i) => (
+              <Timeline.Item key={i} color='#49aa19'>
+                <p>{education.year}</p>
+                <p>{education.education_level}</p>
+                <p>{education.academy_name}</p>
+              </Timeline.Item>
+            ))}
+          </Timeline>
+        </QualificationBox>
+        {isWideMd && <Divider />}
+        <QualificationBox
+          onClick={() => {
+            setModalOpen(true)
+            setStatus('EXPERIENCE')
+          }}
+        >
+          <QualificationTap>
+            <BiBriefcaseAlt2 />
+            <b>{t('about.experiences.experience')}</b>
+          </QualificationTap>
+          <Timeline
+            style={{ width: '100%' }}
+            mode={isWideMd ? 'alternate' : 'left'}
           >
-            <QualificationTap>
-              <BiBriefcaseAlt2 />
-              <b>{t('qualification.experience')}</b>
-            </QualificationTap>
-            <Timeline
-              style={{ width: '100%' }}
-              mode={isWideMd ? 'alternate' : 'left'}
-            >
-              {experiences.map((experience, i) => (
-                <Timeline.Item key={i} color='#49aa19'>
-                  <p>{experience.year}</p>
-                  <p>{experience.company_name}</p>
-                </Timeline.Item>
-              ))}
-            </Timeline>
-          </QualificationBox>
-        </QualificationContainer>
-      </Section>
+            {experiences.map((experience, i) => (
+              <Timeline.Item key={i} color='#49aa19'>
+                <p>{experience.year}</p>
+                <p>{experience.company_name}</p>
+              </Timeline.Item>
+            ))}
+          </Timeline>
+        </QualificationBox>
+      </QualificationContainer>
 
       <Modal
         open={modalOpen}
@@ -196,8 +180,8 @@ const QualificationPage = () => {
         title={
           <b style={{ fontSize: '18px' }}>
             {status === 'EDUCATION'
-              ? t('qualification.study-information')
-              : t('qualification.experience-information')}
+              ? t('about.experiences.study-information')
+              : t('about.experiences.experience-information')}
           </b>
         }
         centered
@@ -250,24 +234,7 @@ const QualificationPage = () => {
   )
 }
 
-export default QualificationPage
-
-const Section = styled.section`
-  display: grid;
-  row-gap: 4rem;
-`
-
-const Topic = styled.div`
-  text-align: center;
-  h2 {
-    font-size: 36px;
-    font-weight: bold;
-  }
-
-  p {
-    color: #757575fa;
-  }
-`
+export default Experiences
 
 const QualificationContainer = styled.div<{
   maxHeight?: number

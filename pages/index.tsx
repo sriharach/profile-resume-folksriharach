@@ -3,10 +3,9 @@ import styled from 'styled-components'
 import { GetStaticProps } from 'next/types'
 import type { NextPageWithLayout } from '@/interfaces/next-interface'
 import LayoutDefault from '@/components/layout/LayoutDefault'
-import AboutPage from '@/features/AboutPage'
+import AboutPage from '@/features/about/AboutPage'
 import HomePage from '@/features/HomePage'
 import SkillsPage from '@/features/skills/SkillsPage'
-import QualificationPage from '@/features/QualificationPage'
 import ContactPage from '@/features/ContactPage'
 import languageTranslation from '@/helpers/languageTranslation'
 
@@ -17,7 +16,6 @@ const Home: NextPageWithLayout = () => {
         <HomePage />
         <AboutPage />
         <SkillsPage />
-        <QualificationPage />
         <ContactPage />
       </Box>
     </>
