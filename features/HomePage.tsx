@@ -165,7 +165,7 @@ const Social = styled.div`
 const Yourself = styled.div`
   background-image: url('img/main-profile.jpeg');
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   box-shadow: inset 0 0 0 9px rgb(255 255 255/ 30%);
   width: 300px;
