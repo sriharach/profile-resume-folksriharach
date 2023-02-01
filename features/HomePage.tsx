@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import {
   DeploymentUnitOutlined,
   GithubOutlined,
-  InstagramOutlined,
 } from '@ant-design/icons'
 import { useTranslation } from 'next-i18next'
 
@@ -15,14 +14,14 @@ const HomePage = () => {
       <div id='home' />
       <Grid>
         <Social>
-          <InstagramOutlined
+          {/* <InstagramOutlined
             onClick={() => {
               const a = document.createElement('a')
               a.href = 'https://www.instagram.com/fspfolk/'
               a.target = '_blank'
               a.click()
             }}
-          />
+          /> */}
           <GithubOutlined
             onClick={() => {
               const a = document.createElement('a')
