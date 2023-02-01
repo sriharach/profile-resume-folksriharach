@@ -12,21 +12,34 @@ const AboutPage = () => {
   const { t } = useTranslation('common')
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
 
-  const handleDownload = () => {
-    const time = new Date()
-    fetch('assets/transcript.pdf').then((res) => {
+  const handleLoadresume = () => {
+    fetch('assets/Sriharach-resume.pdf').then((res) => {
       res.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
         // Setting various property values
         const alink = document.createElement('a')
         alink.href = fileURL
-        alink.download = `transcript-${time.getDate()}-${
-          time.getMonth() + 1
-        }-${time.getFullYear()}`
+        alink.download = `Sriharach-resume`
         alink.click()
       })
     })
   }
+
+  // const handleDownload = () => {
+  //   const time = new Date()
+  //   fetch('assets/transcript.pdf').then((res) => {
+  //     res.blob().then((blob) => {
+  //       const fileURL = window.URL.createObjectURL(blob)
+  //       // Setting various property values
+  //       const alink = document.createElement('a')
+  //       alink.href = fileURL
+  //       alink.download = `transcript-${time.getDate()}-${
+  //         time.getMonth() + 1
+  //       }-${time.getFullYear()}`
+  //       alink.click()
+  //     })
+  //   })
+  // }
 
   return (
     <React.Fragment>
@@ -113,8 +126,8 @@ const AboutPage = () => {
                 <span>{t('about.des.address')}</span>
               </p>
             </div>
-            <div>
-              <Button
+            <Boxbutton>
+              {/* <Button
                 onClick={handleDownload}
                 style={{
                   height: isWideLg ? '40px' : '56px',
@@ -126,8 +139,32 @@ const AboutPage = () => {
                 icon={<DownloadOutlined />}
               >
                 {t('about.btn-download')}
+              </Button> */}
+              <Button
+                onClick={handleLoadresume}
+                block={isWideLg}
+                style={{
+                  height: isWideLg ? '40px' : '56px',
+                  borderRadius: '0.8rem',
+                }}
+                type='primary'
+                icon={<DownloadOutlined />}
+              >
+                {t('about.des.button.resume')}
               </Button>
-            </div>
+              <Button
+                disabled
+                block={isWideLg}
+                style={{
+                  height: isWideLg ? '40px' : '56px',
+                  borderRadius: '0.8rem',
+                }}
+                type='primary'
+                icon={<DownloadOutlined />}
+              >
+                {t('about.des.button.cv')}
+              </Button>
+            </Boxbutton>
           </DetailContent>
         </Grid>
         <Experiences />
@@ -239,4 +276,18 @@ const InlineBox = styled(Card)`
 const Section = styled.section`
   display: grid;
   row-gap: 4rem;
+`
+const Boxbutton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .ant-btn-primary {
+    width: 100%;
+  }
+
+  ${(props) => props.theme.breakpoints.sm.down} {
+    flex-direction: column;
+  }
 `

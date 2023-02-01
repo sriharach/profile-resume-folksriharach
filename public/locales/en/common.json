@@ -39,7 +39,11 @@
             "nationality": "Thai",
             "religion": "Buddhism",
             "military": "Finished Reserved Officers Training Corps Course (R.O.T.C.)",
-            "address": "Khlongsamwa Khwaeng Sam Wa Tawan Tok 10510 Bangkok"
+            "address": "Khlongsamwa Khwaeng Sam Wa Tawan Tok 10510 Bangkok",
+            "button": {
+                "resume": "Download resume",
+                "cv": "Download CV"
+            }
         },
         "experiences": {
             "title": "Work experiences & Education",

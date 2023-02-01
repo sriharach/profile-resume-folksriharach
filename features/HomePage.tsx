@@ -2,31 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import {
   DeploymentUnitOutlined,
-  DownloadOutlined,
   GithubOutlined,
   InstagramOutlined,
 } from '@ant-design/icons'
 import { useTranslation } from 'next-i18next'
-import { Button } from 'antd'
-import useMedia from 'use-media'
-import { theme } from '@/styles/styled-component-theme'
 
 const HomePage = () => {
   const { t } = useTranslation('common')
-  const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
-
-  const handleLoadresume = () => {
-    fetch('assets/Sriharach-resume.pdf').then((res) => {
-      res.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob)
-        // Setting various property values
-        const alink = document.createElement('a')
-        alink.href = fileURL
-        alink.download = `Sriharach-resume`
-        alink.click()
-      })
-    })
-  }
 
   return (
     <React.Fragment>
@@ -71,7 +53,7 @@ const HomePage = () => {
           <h1>{t('home.name')}</h1>
           <span>{t('home.message')}</span>
           <p>{t('home.guide')}</p>
-          <Button
+          {/* <Button
             onClick={handleLoadresume}
             block={isWideLg}
             style={{
@@ -83,7 +65,7 @@ const HomePage = () => {
             icon={<DownloadOutlined />}
           >
             {t('home.documect-resume')}
-          </Button>
+          </Button> */}
         </Content>
         <Yourself />
       </Grid>

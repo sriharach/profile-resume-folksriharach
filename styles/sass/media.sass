@@ -1,11 +1,11 @@
-@keyframes profile_img 
-  0% 
+@keyframes profile_img
+  0%
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%
-  
-  50% 
+
+  50%
     border-radius: 30% 60% 70% 40% / 50% 30% 60% 70%
-  
-  100% 
+
+  100%
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%
 
 @keyframes load-circle
@@ -14,28 +14,27 @@
     height: 5px
     border-radius: 50px 50px 25px 25px
     transform: scaleX(1.7)
-    
+
   40%
     height: 20px
     border-radius: 50%
     transform: scaleX(1)
-    
+
   100%
     top: 0%
 
 @keyframes load-shadow
   0%
     transform: scaleX(1.5)
-    
+
   40%
     transform: scaleX(1)
     opacity: .7
-    
+
   100%
     transform: scaleX(.2)
     opacity: .4
-    
-    
+
 // breakpoints max-width
 @media screen and (max-width: 576px)
   .ant-timeline .ant-timeline-item
@@ -43,44 +42,41 @@
 
 @media screen and (max-width: 768px)
 
-
 @media screen and (max-width: 992px)
 
-
 @media screen and (max-width: 1200px)
-
 
 // breakpoints min-width
 @media screen and (min-width: 576px)
 
 @media screen and (min-width: 768px)
   header
-      height: 80px
+    height: 80px
 
 @media screen and (min-width: 992px)
   header
-      height: 88px
+    height: 88px
 
 @media screen and (min-width: 1200px)
   .container
-      max-width: 1200px
+    max-width: 1200px
 
   main
-      max-width: 1200px
+    max-width: 1200px
 
 // scheme color
 @media (prefers-color-scheme: dark)
   html
-      color-scheme: dark
+    color-scheme: dark
 
   body
-      color: #b0b8b8
-      background-color: #111111
+    color: #b0b8b8
+    background-color: #111111
 
   header,
   footer
-      border-bottom: 1px solid #323232
-      background-color: #000
+    border-bottom: 1px solid #323232
+    background-color: #000
 
   h1,
   h2,
@@ -101,7 +97,6 @@
 
   .ant-input::placeholder
     color: #3d3d3f
-    
 
   .ant-form-item .ant-form-item-label > label
     color: #b0b8b8
@@ -120,7 +115,7 @@
 
   .ant-timeline .ant-timeline-item-tail
     border-color: #3d3d3f
-    
+
   .ant-modal .ant-modal-content
     background-color: #111111
     svg
@@ -129,4 +124,6 @@
       background-color: #111111
       color: #b0b8b8
 
-    
+  .ant-btn-primary:disabled
+    background-color: #272727
+    color: #b0b8b8
