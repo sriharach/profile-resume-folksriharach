@@ -12,8 +12,9 @@ const LanguageSwitcher = () => {
   }
   return (
     <React.Fragment>
-      <LanguageBox className='front-md'>
+      <LanguageBox>
         <LanguageEN
+          current={Router.locale}
           onClick={(e) => {
             e.preventDefault()
             handleSwitchLanguage('en')
@@ -21,8 +22,9 @@ const LanguageSwitcher = () => {
         >
           EN
         </LanguageEN>
-        <span>|</span>
+        <span style={{ cursor: 'default' }}>|</span>
         <LanguageTH
+          current={Router.locale}
           onClick={(e) => {
             e.preventDefault()
             handleSwitchLanguage('th')
@@ -41,17 +43,27 @@ const LanguageBox = styled.div`
   display: flex;
   column-gap: 6px;
   font-size: 14px;
-  font-weight: 600;
   align-items: center;
 
   ${(props) => props.theme.breakpoints.md.down} {
     justify-content: end;
   }
 `
-
-const LanguageEN = styled.span`
-  cursor: pointer;
+const LanguageEN = styled.span<{ current?: string }>`
+  ${({ current }) =>
+    current === 'en'
+      ? `cursor: default;
+  font-weight: 600;
+  text-decoration: underline`
+      : `cursor: pointer;
+  font-weight: none;`}
 `
-const LanguageTH = styled.span`
-  cursor: pointer;
+const LanguageTH = styled.span<{ current?: string }>`
+  ${({ current }) =>
+    current === 'th'
+      ? `cursor: default;
+  font-weight: 600;
+  text-decoration: underline;`
+      : `cursor: pointer;
+  font-weight: none;`}
 `

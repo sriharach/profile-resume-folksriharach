@@ -9,7 +9,10 @@ import Experiences from './Experiences'
 import { theme } from '@/styles/styled-component-theme'
 
 const AboutPage = () => {
-  const { t } = useTranslation('common')
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation('common')
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
 
   const handleLoadresume = () => {
@@ -20,6 +23,20 @@ const AboutPage = () => {
         const alink = document.createElement('a')
         alink.href = fileURL
         alink.download = `Sriharach-resume`
+        alink.click()
+      })
+    })
+  }
+
+  const handleLoadCV = () => {
+    const CV_language = language === 'th' ? 'CV-th.pdf' : 'CV-en.pdf'
+    fetch('assets/' + CV_language).then((res) => {
+      res.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob)
+        // Setting various property values
+        const alink = document.createElement('a')
+        alink.href = fileURL
+        alink.download = 'Sriharach-CV-' + language
         alink.click()
       })
     })
@@ -153,7 +170,7 @@ const AboutPage = () => {
                 {t('about.des.button.resume')}
               </Button>
               <Button
-                disabled
+                onClick={handleLoadCV}
                 block={isWideLg}
                 style={{
                   height: isWideLg ? '40px' : '56px',
