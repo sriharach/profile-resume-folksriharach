@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 import { SSRConfig } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 

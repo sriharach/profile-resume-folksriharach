@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
-import { theme } from '../styles/styled-component-theme'
 import { NextChildren } from '@/interfaces/next-interface'
+import { theme } from '../styles/styled-component-theme'
 
 const StyledProvider = ({ children }: NextChildren) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>

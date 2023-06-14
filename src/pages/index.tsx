@@ -1,28 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 import { GetStaticProps } from 'next/types'
-import type { NextPageWithLayout } from '@/interfaces/next-interface'
-import LayoutDefault from '@/components/layout/LayoutDefault'
+import Layout from '@/components/layout/LayoutDefault'
 import AboutPage from '@/features/about/AboutPage'
-import HomePage from '@/features/HomePage'
 import SkillsPage from '@/features/skills/SkillsPage'
 import ContactPage from '@/features/ContactPage'
 import languageTranslation from '@/helpers/languageTranslation'
+import HomePage from '@/features/HomePage'
+import type { NextPageWithLayout } from '@/interfaces/next-interface'
 
 const Home: NextPageWithLayout = () => {
   return (
-    <>
-      <Box>
-        <HomePage />
-        <AboutPage />
-        <SkillsPage />
-        <ContactPage />
-      </Box>
-    </>
+    <Box>
+      <HomePage />
+      <AboutPage />
+      <SkillsPage />
+      <ContactPage />
+    </Box>
   )
 }
 
-Home.getLayout = (page) => <LayoutDefault>{page}</LayoutDefault>
+Home.getLayout = (page) => <Layout>{page}</Layout>
 
 export default Home
 

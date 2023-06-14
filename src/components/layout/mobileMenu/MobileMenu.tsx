@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { Button, Drawer } from 'antd'
 import { MenuOutlined } from '@ant-design/icons'
 import { useTranslation } from 'next-i18next'
-import { useNavroutes } from '../routes'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { useNavroutes } from '../routes'
 
 const MobileMenu = () => {
   const { t } = useTranslation('header')

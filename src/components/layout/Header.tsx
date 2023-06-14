@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import useMedia from 'use-media'
 import { useTranslation } from 'next-i18next'
+import { theme } from '@/styles/styled-component-theme'
 import LanguageSwitcher from '../LanguageSwitcher'
 import DesktopNav from './desktopNav'
 import MobileMenu from './mobileMenu'
-import { theme } from '@/styles/styled-component-theme'
 
 const Header = () => {
   const { t } = useTranslation('header')

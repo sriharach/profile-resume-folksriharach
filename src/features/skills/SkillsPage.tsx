@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { Divider } from 'antd'
 import useMedia from 'use-media'
 import { useTranslation } from 'next-i18next'
+import { theme } from '@/styles/styled-component-theme'
 import Frontend from './Frontend'
 import Backend from './Backend'
 import Languages from './Languages'
 import OtherSkills from './OtherSkills'
-import { theme } from '@/styles/styled-component-theme'
 
 const SkillsPage = () => {
   const { t } = useTranslation('common')

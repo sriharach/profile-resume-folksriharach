@@ -5,8 +5,8 @@ import { BiAward, BiBriefcaseAlt, BiSupport } from 'react-icons/bi'
 import { DownloadOutlined, QuestionCircleOutlined } from '@ant-design/icons'
 import useMedia from 'use-media'
 import { useTranslation } from 'next-i18next'
-import Experiences from './Experiences'
 import { theme } from '@/styles/styled-component-theme'
+import Experiences from './Experiences'
 
 const AboutPage = () => {
   const {

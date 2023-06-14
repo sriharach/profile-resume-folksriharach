@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import DefaultLoading from '../LoadingDefault'
 import MainHeader from './Header'
 import MainFooter from './Footer'
 import type { NextChildren } from '@/interfaces/next-interface'
 
-const LayoutDefault = ({ children }: NextChildren) => {
+const Layout = ({ children }: NextChildren) => {
   const [scrollHeader, setScrollHeader] = useState(0)
-  const [loading, setLoadind] = useState(true)
 
   useEffect(() => {
     window.addEventListener('scroll', function () {
@@ -15,40 +13,20 @@ const LayoutDefault = ({ children }: NextChildren) => {
     })
   }, [])
 
-  useEffect(() => {
-    let isPayLoad = true
-
-    if (isPayLoad) {
-      setTimeout(() => {
-        setLoadind(false)
-      }, 2500)
-    }
-
-    return () => {
-      isPayLoad = false
-    }
-  }, [])
-
   return (
-    <section>
-      {loading ? (
-        <DefaultLoading />
-      ) : (
-        <>
-          <Header boxShadow={scrollHeader}>
-            <MainHeader />
-          </Header>
-          <main>{children}</main>
-          <Footer boxShadow={scrollHeader}>
-            <MainFooter />
-          </Footer>
-        </>
-      )}
-    </section>
+    <>
+      <Header boxShadow={scrollHeader}>
+        <MainHeader />
+      </Header>
+      <main>{children}</main>
+      <Footer boxShadow={scrollHeader}>
+        <MainFooter />
+      </Footer>
+    </>
   )
 }
 
-export default LayoutDefault
+export default Layout
 
 const Header = styled.header<{ boxShadow: number }>`
   box-shadow: ${({ boxShadow }) =>

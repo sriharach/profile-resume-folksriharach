@@ -1,9 +1,10 @@
-import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 import { NextPageWithLayout } from '@/interfaces/next-interface'
 import ThemeAntdProvider from '@/contexts/theme-antd-provider'
 import StyledProvider from '@/contexts/styled-provider'
-import nextI18NextConfig from '@/next-i18next.config.js'
+import Hoc from '@/components/Hoc'
+import nextI18NextConfig from '../../next-i18next.config.js'
+import type { AppProps } from 'next/app'
 import '../styles/sass/main.sass'
 
 type EnhancedAppProps = AppProps & {
@@ -15,7 +16,7 @@ function App({ Component, pageProps }: EnhancedAppProps) {
   return (
     <StyledProvider>
       <ThemeAntdProvider>
-        {getLayout(<Component {...pageProps} />)}
+        <Hoc>{getLayout(<Component {...pageProps} />)}</Hoc>
       </ThemeAntdProvider>
     </StyledProvider>
   )
