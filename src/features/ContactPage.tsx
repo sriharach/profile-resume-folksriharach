@@ -26,7 +26,7 @@ const ContactPage = () => {
   const sendMessage = async (data: TinputForm) => {
     try {
       setSendLoadMail(true)
-      //eslint-disable-next-line import/no-named-as-default-member
+      // eslint-disable-next-line import/no-named-as-default-member
       const result = await emailjs.send(serviceID, templateID, data, publicKey)
       if (result.status === 200) {
         setSendLoadMail(false)
