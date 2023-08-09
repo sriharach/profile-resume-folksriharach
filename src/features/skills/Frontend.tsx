@@ -9,11 +9,11 @@ const Frontend = () => {
   const front_skills1 = [
     {
       skill_name: 'React',
-      skill_level: t('skills.intermediate'),
+      skill_level: t('skills.advanced'),
     },
     {
       skill_name: 'Next.js',
-      skill_level: t('skills.intermediate'),
+      skill_level: t('skills.advanced'),
     },
   ]
   const front_skills2 = [
@@ -22,7 +22,7 @@ const Frontend = () => {
       skill_level: t('skills.basic'),
     },
     {
-      skill_name: 'Javascript',
+      skill_name: 'Javascript - Typescript',
       skill_level: t('skills.advanced'),
     },
   ]

@@ -8,29 +8,21 @@ const Backend = () => {
   const { t } = useTranslation('common')
   const skill_backend1 = [
     {
-      skill_name: 'Node',
-      skill_level: t('skills.intermediate'),
+      skill_name: 'Node.js + Express',
+      skill_level: t('skills.advanced'),
     },
     {
       skill_name: 'PHP',
       skill_level: t('skills.basic'),
     },
-    {
-      skill_name: 'Linux',
-      skill_level: t('skills.basic'),
-    },
   ]
   const skill_backend2 = [
     {
-      skill_name: 'Typescript',
+      skill_name: 'Typescript + Express',
       skill_level: t('skills.advanced'),
     },
     {
-      skill_name: 'SQL',
-      skill_level: t('skills.intermediate'),
-    },
-    {
-      skill_name: 'Golang',
+      skill_name: 'Golang + Fiber',
       skill_level: t('skills.beginner'),
     },
   ]
@@ -50,7 +42,6 @@ const Backend = () => {
               </SkillData>
             ))}
           </SkillGroup>
-
           <SkillGroup>
             {skill_backend2.map((data, i) => (
               <SkillData key={i}>

@@ -6,28 +6,54 @@ import { useTranslation } from 'next-i18next'
 
 const OtherSkills = () => {
   const { t } = useTranslation('common')
+
+  const other_skills1 = [
+    {
+      skill_name: 'Postgres Database',
+      skill_level: t('skills.intermediate'),
+    },
+    {
+      skill_name: 'Postman',
+      skill_level: t('skills.intermediate'),
+    },
+  ]
+  const other_skills2 = [
+    {
+      skill_name: 'SQL',
+      skill_level: t('skills.intermediate'),
+    },
+    {
+      skill_name: 'Linux',
+      skill_level: t('skills.basic'),
+    },
+  ]
+
   return (
     <React.Fragment>
       <Card>
         <OtherTitle>{t('skills.other')}</OtherTitle>
         <OtherBox>
           <OtherGroup>
-            <OtherData>
-              <FcApproval />
-              <div>
-                <OtherName>Postgres Database</OtherName>
-                <OtherLevel>{t('skills.intermediate')}</OtherLevel>
-              </div>
-            </OtherData>
+            {other_skills1.map((data, i) => (
+              <OtherData key={i}>
+                <FcApproval />
+                <div>
+                  <OtherName>{data.skill_name}</OtherName>
+                  <OtherLevel>{data.skill_level}</OtherLevel>
+                </div>
+              </OtherData>
+            ))}
           </OtherGroup>
           <OtherGroup>
-            <OtherData>
-              <FcApproval />
-              <div>
-                <OtherName>Postman</OtherName>
-                <OtherLevel>{t('skills.intermediate')}</OtherLevel>
-              </div>
-            </OtherData>
+            {other_skills2.map((data, i) => (
+              <OtherData key={i}>
+                <FcApproval />
+                <div>
+                  <OtherName>{data.skill_name}</OtherName>
+                  <OtherLevel>{data.skill_level}</OtherLevel>
+                </div>
+              </OtherData>
+            ))}
           </OtherGroup>
         </OtherBox>
       </Card>
