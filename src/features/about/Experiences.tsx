@@ -84,19 +84,19 @@ const Experiences = () => {
         ทำข้อมูลการลงทะเบียน KYC พัฒนาด้วย Nextjs. และการเก็บข้อมูล State ใช้เป็น redux/toolkit, zustand`,
       },
     },
-    {
-      year: '2565',
-      company_name: 'ENTER Corporation Co., Ltd.',
-      full_experience: {
-        company_name: 'ENTER Corporation Co., Ltd.',
-        position: 'Frontend developer',
-        period: 'กุมภาพันธ์ 2565 ถึง พฤษภาคม 2565',
-        address:
-          'อาคารพร้อมพันธุ์ 3 ชั้น 2 77/112 ซอย ลาดพร้าว 3 ถนนลาดพร้าว แขววจอมพล เขตจตุจักร กรุงเทพมหานคร 10900',
-        detail_working: `ขึ้นโครงสร้างงานของ Nextjs สำหรับงานศาลแพ่ง
-        ออกแบบหน้า UI ตามรูปแบบของกราฟิก`,
-      },
-    },
+    // {
+    //   year: '2565',
+    //   company_name: 'ENTER Corporation Co., Ltd.',
+    //   full_experience: {
+    //     company_name: 'ENTER Corporation Co., Ltd.',
+    //     position: 'Frontend developer',
+    //     period: 'กุมภาพันธ์ 2565 ถึง พฤษภาคม 2565',
+    //     address:
+    //       'อาคารพร้อมพันธุ์ 3 ชั้น 2 77/112 ซอย ลาดพร้าว 3 ถนนลาดพร้าว แขววจอมพล เขตจตุจักร กรุงเทพมหานคร 10900',
+    //     detail_working: `ขึ้นโครงสร้างงานของ Nextjs สำหรับงานศาลแพ่ง
+    //     ออกแบบหน้า UI ตามรูปแบบของกราฟิก`,
+    //   },
+    // },
     {
       year: '2564',
       company_name: 'Inter Set Research And Solution Co.,Ltd.',
@@ -171,7 +171,7 @@ const Experiences = () => {
       </QualificationContainer>
 
       <Modal
-        open={modalOpen}
+        open={false}
         onCancel={() => setModalOpen(false)}
         footer={false}
         focusTriggerAfterClose={false}
@@ -270,9 +270,9 @@ const QualificationBox = styled.div`
     }
   }
 
-  .ant-timeline .ant-timeline-item {
+  /* .ant-timeline .ant-timeline-item {
     cursor: pointer;
-  }
+  } */
 
   ${(props) => props.theme.breakpoints.md.down} {
     min-width: 540px;

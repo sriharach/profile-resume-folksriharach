@@ -15,28 +15,28 @@ const AboutPage = () => {
   } = useTranslation('common')
   const isWideLg = useMedia({ maxWidth: `${theme.breakpoints.lg.value}px` })
 
-  const handleLoadresume = () => {
-    fetch('assets/Sriharach-resume.pdf').then((res) => {
-      res.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob)
-        // Setting various property values
-        const alink = document.createElement('a')
-        alink.href = fileURL
-        alink.download = `Sriharach-resume`
-        alink.click()
-      })
-    })
-  }
+  // const handleLoadresume = () => {
+  //   fetch('assets/Sriharach-resume.pdf').then((res) => {
+  //     res.blob().then((blob) => {
+  //       const fileURL = window.URL.createObjectURL(blob)
+  //       // Setting various property values
+  //       const alink = document.createElement('a')
+  //       alink.href = fileURL
+  //       alink.download = `Sriharach-resume`
+  //       alink.click()
+  //     })
+  //   })
+  // }
 
   const handleLoadCV = () => {
-    const CV_language = language === 'th' ? 'CV-th.pdf' : 'CV-en.pdf'
+    const CV_language = language === 'th' ? 'CV-sriharach-en.pdf' : 'CV-sriharach-en.pdf'
     fetch('assets/' + CV_language).then((res) => {
       res.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
         // Setting various property values
         const alink = document.createElement('a')
         alink.href = fileURL
-        alink.download = 'Sriharach-CV-' + language
+        alink.download = 'CV-sriharach-' + language
         alink.click()
       })
     })
@@ -157,7 +157,7 @@ const AboutPage = () => {
               >
                 {t('about.btn-download')}
               </Button> */}
-              <Button
+              {/* <Button
                 onClick={handleLoadresume}
                 block={isWideLg}
                 style={{
@@ -168,7 +168,7 @@ const AboutPage = () => {
                 icon={<DownloadOutlined />}
               >
                 {t('about.des.button.resume')}
-              </Button>
+              </Button> */}
               <Button
                 onClick={handleLoadCV}
                 block={isWideLg}
