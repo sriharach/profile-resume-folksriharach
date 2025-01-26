@@ -1,0 +1,20 @@
+@use 'fonts';
+@use 'root-token';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  html,
+  body {
+    font-family: 'Ekachon';
+    background: url('/img/5499483.jpg');
+    @apply m-0 overflow-x-hidden h-full bg-cover bg-no-repeat;
+  }
+
+  #__next {
+    isolation: isolate;
+  }
+}

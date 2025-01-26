@@ -1,0 +1,39 @@
+.layout {
+    @apply px-4 xl:px-24;
+
+    &__header {
+        @apply p-4 xl:px-24 flex-1 flex justify-between items-center;
+    }
+
+    &__text-hover-underline {
+        font-size: 20px;
+        color: #fff;
+        position: relative;
+        display: inline-block;
+    }
+
+    &__text-hover-underline::after,
+    &__text-hover-underline::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: var(--main-color-primavera6);
+        bottom: -5px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s ease-out;
+    }
+
+
+    &__text-hover-underline::before {
+        top: -5px;
+        transform-origin: left;
+    }
+
+    &__text-hover-underline:hover::after,
+    &__text-hover-underline:hover::before {
+        transform: scaleX(1);
+    }
+}
