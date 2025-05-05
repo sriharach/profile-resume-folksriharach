@@ -1,35 +1,50 @@
 // lib
 import React from 'react'
-import { FaCircle } from 'react-icons/fa'
+import styled from './Timeline.module.scss'
+import clsx from 'clsx'
+
+const mockData = [
+  {
+    date: '20-08-2019',
+    title: 'ttb spark',
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!',
+  },
+  {
+    date: '20-08-2019',
+    title: 'Bitkub Blockchain Technology',
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!',
+  },
+  {
+    date: '20-08-2019',
+    title: 'Inter Set Research And Solution',
+    description:
+      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum quidem dolorem in!',
+  },
+]
 
 const Timeline = () => {
   return (
-    <div className='inline-block space-y-1'>
-      <div className='inline-flex items-center gap-4'>
-        <FaCircle className='text-white size-4' />
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae,
-          delectus nihil, repellat animi nobis doloribus, numquam hic labore aut
-          nostrum magnam. Magni tempore ipsam adipisci placeat repellendus
-          fugiat voluptates, consequuntur incidunt consectetur quisquam fuga.
-          Porro, voluptatibus adipisci unde doloremque fugiat voluptas
-          asperiores praesentium. Possimus consequuntur amet cum dolores enim.
-          Iste in accusantium officia tempora voluptatum labore deserunt,
-          doloremque corporis reprehenderit exercitationem natus ea accusamus
-          neque quisquam fugiat nulla, est totam dolores nemo ipsam excepturi
-          vero iure inventore. Reprehenderit, alias illo?
-        </p>
-      </div>
-      <div className='min-h-16 border-l-2 ml-1 border-white' />
-      <div className='inline-flex items-center gap-4'>
-        <FaCircle className='text-white size-4' />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          soluta sit quo voluptatem. Officia nam ipsa esse inventore vitae
-          dolore placeat maxime, ex nulla praesentium tempora quae perferendis
-          animi cumque!
-        </p>
-      </div>
+    <div className={clsx(styled['timeline'], 'animate-fadeInUp')}>
+      {mockData.map((data) => {
+        return (
+          <div key={data.title} className={styled['timeline__event']}>
+            <div className={styled['timeline__event__icon']}>
+              <i className='lni-cake'></i>
+              <div className={styled['timeline__event__date']}>icon company</div>
+            </div>
+            <div className={styled['timeline__event__content']}>
+              <div className={styled['timeline__event__title']}>
+                {data.title}
+              </div>
+              <div className={styled['timeline__event__description']}>
+                <p className='text-color-gray2'>{data.description}</p>
+              </div>
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }

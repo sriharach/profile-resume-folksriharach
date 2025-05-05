@@ -28,15 +28,15 @@ export default {
           '0%, 100%': { boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)' },
           '50%': { boxShadow: '0 0 20px rgba(255, 255, 255, 1)' },
         },
-        lineRunner: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(100%)' },
+        fadeInUp: {
+          '0%': { opacity: '0.5', transform: 'translateY(60px)' },
+          '100%': {  opacity: '1', transform: 'translateY(0)' },
         },
       },
       animation: {
         moveUpDown: 'moveUpDown 2.5s ease-in-out infinite',
         luminescence: 'luminescence 2s infinite',
-        lineRunner: 'lineRunner 2s linear infinite',
+        fadeInUp: 'fadeInUp 1.6s ease-out',
       },
     },
   },
