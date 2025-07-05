@@ -1,39 +1,66 @@
 .layout {
-    @apply px-4 xl:px-24;
+  // @apply space-y-12 lg:space-y-28;
 
-    &__header {
-        @apply p-4 xl:px-24 flex-1 flex justify-between items-center;
+  &__header {
+    @apply px-4 xl:px-48 transition-all duration-300 fixed bg-transparent backdrop-blur-md z-[9999] w-full h-[100px] flex justify-between items-center text-neutral-800;
+
+    &-push-content {
+      @apply px-4 xl:px-60;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
+  }
 
-    &__text-hover-underline {
-        font-size: 20px;
-        color: #fff;
-        position: relative;
-        display: inline-block;
-    }
+  &__header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: blur(2px);
+    // filter: url(#glass-distortion);
+    isolation: isolate;
+    -webkit-backdrop-filter: blur(2px);
+    // -webkit-filter: url('#glass-distortion');
+  }
 
-    &__text-hover-underline::after,
-    &__text-hover-underline::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background: var(--main-color-primavera6);
-        bottom: -5px;
-        left: 0;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform 0.4s ease-out;
-    }
+  &__header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 28px;
+    box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255), 0.4;
+  }
 
+  
+  &__text-hover-underline {
+    font-size: 20px;
+    color: #000;
+    position: relative;
+    display: inline-block;
+  }
 
-    &__text-hover-underline::before {
-        top: -5px;
-        transform-origin: left;
-    }
+  &__text-hover-underline::after,
+  &__text-hover-underline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--main-color-primavera6);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+  }
 
-    &__text-hover-underline:hover::after,
-    &__text-hover-underline:hover::before {
-        transform: scaleX(1);
-    }
+  &__text-hover-underline::before {
+    top: -5px;
+    transform-origin: left;
+  }
+
+  &__text-hover-underline:hover::after,
+  &__text-hover-underline:hover::before {
+    transform: scaleX(1);
+  }
 }

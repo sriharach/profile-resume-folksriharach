@@ -9,7 +9,7 @@ const SwitchLocale = () => {
       data-testid='test-switch-locale'
       className='dropdown dropdown-end flex'
     >
-      <div tabIndex={0} role='button' className='text-md text-white'>
+      <div tabIndex={0} role='button' className='text-md'>
         {locale.toUpperCase()}
       </div>
       <ul

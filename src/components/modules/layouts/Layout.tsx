@@ -5,9 +5,7 @@ import Header from './Header'
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <React.Fragment>
-      <header>
-        <Header />
-      </header>
+      <Header />
       <main className={styled['layout']}>{children}</main>
     </React.Fragment>
   )
