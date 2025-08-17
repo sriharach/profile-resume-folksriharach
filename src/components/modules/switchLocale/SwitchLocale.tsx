@@ -9,19 +9,19 @@ const SwitchLocale = () => {
       data-testid='test-switch-locale'
       className='dropdown dropdown-end flex'
     >
-      <div tabIndex={0} role='button' className='text-md'>
+      <div tabIndex={0} role='button' className='transition-all hover:text-main-color-primavera1'>
         {locale.toUpperCase()}
       </div>
       <ul
         tabIndex={0}
-        className='dropdown-content menu bg-base-100 rounded-box z-[1] w-auto p-2 shadow'
+        className='dropdown-content menu bg-main-color-primavera2 rounded-box z-[1] w-auto p-2 shadow'
       >
-        <li className=''>
+        <li>
           <Link href={'/'} passHref locale='en'>
             EN
           </Link>
         </li>
-        <li className=''>
+        <li>
           <Link href={'/'} passHref locale='th'>
             TH
           </Link>

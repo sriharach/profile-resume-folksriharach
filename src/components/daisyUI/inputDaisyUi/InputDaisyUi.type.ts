@@ -3,4 +3,5 @@ export interface InputDaisyUiProps
   inputSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   className?: string
   variant?: 'ghost' | 'primary' | 'secondary' | 'accent' | 'info'
+  inputError?: boolean
 }

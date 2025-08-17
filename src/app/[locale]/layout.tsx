@@ -1,7 +1,11 @@
+// libs
 import type { Metadata } from 'next'
 import { getMessages } from 'next-intl/server'
 import { NextIntlClientProvider } from 'next-intl'
 import React, { ReactNode } from 'react'
+import { ToastContainer } from 'react-toastify'
+
+// components
 import Layout from '../../components/modules/layouts/Layout'
 import '@/styles/globals.scss'
 
@@ -26,6 +30,11 @@ export default async function RootLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <ToastContainer
+            position='bottom-right'
+            autoClose={2000}
+            hideProgressBar={false}
+          />
           <Layout>{children}</Layout>
         </NextIntlClientProvider>
       </body>
