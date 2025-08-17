@@ -9,9 +9,9 @@ import { SectionBoxProps } from './type'
 // style
 import styled from './sectionBox.module.scss'
 
-const SectionBox = ({ children, className }: SectionBoxProps) => {
+const SectionBox = ({ children, className, ...props }: SectionBoxProps) => {
   return (
-    <section className={clsx(styled['section-box'], className)}>
+    <section className={clsx(styled['section-box'], className)} {...props}>
       <FadeUpOnScroll className={styled['section-box-grid']}>
         {children}
       </FadeUpOnScroll>

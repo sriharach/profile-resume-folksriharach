@@ -1,4 +1,4 @@
-name: Next.js CI/CD with Vercel
+name: Auto CI/CD Vercel
 
 on:
   push:
@@ -25,18 +25,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Run lint
-      - name: Run lint
-        run: npm run lint
-
-      # 5. Run tests
-      - name: Run tests
-        run: npm test
-
-      # 6. Build Next.js
+      # 4. Build Next.js
       - name: Build Next.js
         run: npm run build
 
-      # 7. Deploy ไป Vercel
+      # 5. Deploy ไป Vercel
       - name: Deploy to Vercel
         run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}

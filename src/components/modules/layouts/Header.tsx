@@ -20,15 +20,21 @@ const Header = () => {
     >
       <div className='text-3xl font-bold'>Logo</div>
       <div className='flex justify-between items-center space-x-12'>
-        <ul className='flex space-x-12'>
+        <ul className='flex space-x-8 items-center'>
           <li role='button' className={styled['layout__text-hover-underline']}>
-            Home
+            <a href='#home'>Home</a>
           </li>
           <li role='button' className={styled['layout__text-hover-underline']}>
-            Skill
+            <a href='#about'>About</a>
           </li>
           <li role='button' className={styled['layout__text-hover-underline']}>
-            Projects
+            <a href='#experiences'>Experience</a>
+          </li>
+          <li role='button' className={styled['layout__text-hover-underline']}>
+            <a href='#portfolio'>Portfolio</a>
+          </li>
+          <li role='button' className={styled['layout__text-hover-underline']}>
+            <a href='#contact'>Contact</a>
           </li>
         </ul>
         <SwitchLocale />

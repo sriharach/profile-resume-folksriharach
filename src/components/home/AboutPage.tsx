@@ -9,9 +9,15 @@ import ButtonDaisyUi from '../daisyUI/buttonDaisyUi/ButtonDaisyUi'
 // shared
 import SectionBox from '../shared/sectionBox/sectionBox'
 
+// hooks
+import useAbout from '@/hooks/useAbout'
+
 const AboutPage = () => {
+  // hooks
+  const { onClickDownloadCV } = useAbout()
+
   return (
-    <SectionBox>
+    <SectionBox id='about'>
       <Image
         src='/img/main-profile.webp'
         alt=''
@@ -61,6 +67,7 @@ const AboutPage = () => {
             <span className='text-zinc-500'>Sriharach Promruksa</span>
           </div>
           <ButtonDaisyUi
+            onClick={onClickDownloadCV}
             variant='outline'
             className='min-h-[80px] text-white text-lg mt-8'
             text='Download CV'

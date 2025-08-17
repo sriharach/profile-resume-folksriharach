@@ -1,20 +1,24 @@
 // libs
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { FaLinkedin, FaGithub  } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 // component
 import Typewriter from '@/components/modules/typewriter/Typewriter'
 import styled from './home.module.scss'
 
+// hooks
+import useHome from '@/hooks/useHome'
+
 const HomePage = () => {
+  // translations
   const t = useTranslations('home')
+
+  // hooks
+  const { onClickRedirect } = useHome()
+
   return (
-    <section
-      id='introduce-yourself'
-      aria-label='home-page'
-      className={styled['home']}
-    >
+    <section id='home' aria-label='home-page' className={styled['home']}>
       <Image
         draggable={false}
         className='absolute top-[100px] z-10 left-0 w-[80px] xl:w-[120px]'
@@ -41,12 +45,19 @@ const HomePage = () => {
         <Typewriter className='text-4xl' text={t('introduce')} delay={100} />
       </div>
       <div className='absolute z-10 bottom-10 right-12'>
-        <div className='flex flex-row space-x-3'>
-          <div className='transition-all duration-300 hover:-translate-y-3 hover:bg-main-color-primavera1 rounded-full bg-white w-10 h-10 flex justify-center items-center cursor-pointer'>
-            <FaLinkedin />
+        <div aria-label='linkedin-icon' className='flex flex-row space-x-3'>
+          <div
+            className='icon-up group'
+            onClick={() => onClickRedirect(process.env.URL_LINKEDIN as string)}
+          >
+            <FaLinkedin className='group-hover:text-white size-5' />
           </div>
-          <div className='transition-all duration-300 hover:-translate-y-3 hover:bg-main-color-primavera1 rounded-full bg-white w-10 h-10 flex justify-center items-center cursor-pointer'>
-            <FaGithub />
+          <div
+            aria-label='github-icon'
+            className='icon-up group'
+            onClick={() => onClickRedirect(process.env.URL_GITHUB as string)}
+          >
+            <FaGithub className='group-hover:text-white size-5' />
           </div>
         </div>
       </div>

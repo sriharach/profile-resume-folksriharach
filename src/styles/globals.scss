@@ -9,6 +9,7 @@
 
   html,
   body {
+    scroll-behavior: smooth;
     font-family: 'Ekachon';
     @apply m-0 overflow-x-hidden;
   }
@@ -16,4 +17,8 @@
   #__next {
     isolation: isolate;
   }
+}
+
+.icon-up {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:bg-main-color-primavera1 rounded-full bg-white size-12 flex justify-center items-center cursor-pointer;
 }

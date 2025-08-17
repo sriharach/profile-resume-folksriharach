@@ -12,6 +12,7 @@ const ButtonDaisyUi = ({
   loading,
   className,
   fullWidth,
+  ...props
 }: ButtonDaisyUiProps) => {
   return (
     <button
@@ -25,6 +26,7 @@ const ButtonDaisyUi = ({
         },
         className,
       )}
+      {...props}
     >
       {loading ? <span className='loading loading-spinner' /> : text}
     </button>

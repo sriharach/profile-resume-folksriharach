@@ -10,7 +10,10 @@ import FadeUpOnScroll from '../shared/fadeUponScroll/fadeUponScroll'
 
 const Experiences = () => {
   return (
-    <FadeUpOnScroll className='bg-white px-4 my-20 xl:px-60 min-h-[660px] flex justify-center items-center'>
+    <FadeUpOnScroll
+      id='experiences'
+      className='bg-white px-4 py-20 xl:px-60 min-h-[660px] flex justify-center items-center'
+    >
       <div className={styled['experiences']}>
         {/* experiences */}
         <div className={clsx(styled['experiences-box-col'], 'bg-neutral-800 ')}>

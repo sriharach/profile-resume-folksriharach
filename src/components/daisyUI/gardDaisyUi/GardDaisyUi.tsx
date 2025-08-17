@@ -1,20 +1,37 @@
+// libs
 import React from 'react'
+import Image from 'next/image'
 
-const GardDaisyUi = () => {
+// components
+import ButtonDaisyUi from '../buttonDaisyUi/ButtonDaisyUi'
+
+// type
+import { GardDaisyUiProps } from './type'
+
+const GardDaisyUi = ({
+  image,
+  title,
+  description,
+  feature,
+  onClick,
+}: GardDaisyUiProps) => {
   return (
-    <div className='card card-compact bg-base-100 w-full shadow-md'>
+    <div className='card card-compact bg-white w-full shadow-md group'>
       <figure>
-        <img
-          src='https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp'
-          alt='Shoes'
-        />
+        <Image src={image} width={400} height={400} alt='' />
       </figure>
       <div className='card-body'>
-        <h2 className='card-title'>Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className='card-actions justify-end'>
-          <button className='btn btn-primary'>Buy Now</button>
-        </div>
+        <h4 className='card-title group-hover:animate-fadeInUp group-hover:text-main-color-primavera1'>
+          {title}
+        </h4>
+        <p className='text-zinc-500 text-sm group-hover:animate-fadeInUp'>{feature}</p>
+        <p className='text-zinc-500'>{description}</p>
+        <ButtonDaisyUi
+          fullWidth
+          text='View'
+          variant='outline'
+          onClick={onClick}
+        />
       </div>
     </div>
   )

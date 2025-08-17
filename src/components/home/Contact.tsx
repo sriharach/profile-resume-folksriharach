@@ -14,7 +14,7 @@ import TextTopic from '../shared/textTopic/textTopic'
 
 const Contact = () => {
   return (
-    <SectionBox>
+    <SectionBox id='contact'>
       <div className='bg-white shadow-xl flex flex-col space-y-6 p-6 mr-20 rounded-lg'>
         <TextTopic
           text={
@@ -68,14 +68,14 @@ const Contact = () => {
         </p>
         <div className='flex flex-col space-y-6 justify-center mx-auto'>
           <div className='flex items-center space-x-4'>
-            <div className='flex flex-col justify-center items-center rounded-full bg-main-color-primavera1 w-10 h-10'>
-              <MdAlternateEmail size={24} className='text-white' />
+            <div className='flex flex-col justify-center items-center rounded-full bg-main-color-primavera1 size-12'>
+              <MdAlternateEmail className='text-white size-6' />
             </div>
             <span className='text-neutral-500'>folksriharach@gmail.com</span>
           </div>
           <div className='flex items-center space-x-4'>
-            <div className='flex flex-col justify-center items-center rounded-full bg-main-color-primavera1 w-10 h-10'>
-              <MdOutlinePhoneIphone size={24} className='text-white' />
+            <div className='flex flex-col justify-center items-center rounded-full bg-main-color-primavera1 size-12'>
+              <MdOutlinePhoneIphone className='text-white size-6' />
             </div>
             <span className='text-neutral-500'>096-301-11722</span>
           </div>
