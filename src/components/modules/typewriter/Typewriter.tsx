@@ -7,7 +7,7 @@ import useTypewriter from './useTypewriter'
 
 const Typewriter = ({ text, delay, className }: TypewriterProps) => {
   const { currentText } = useTypewriter(text, delay)
-  return <span className={clsx('text-white', className)}>{currentText}</span>
+  return <span className={clsx(className)}>{currentText}</span>
 }
 
 export default Typewriter

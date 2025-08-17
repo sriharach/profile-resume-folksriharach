@@ -2,7 +2,7 @@
   // @apply space-y-12 lg:space-y-28;
 
   &__header {
-    @apply px-4 xl:px-48 transition-all duration-300 fixed bg-transparent backdrop-blur-md z-[9999] w-full h-[100px] flex justify-between items-center text-neutral-800;
+    @apply px-4 xl:px-48 transition-all top-0 flex-1 duration-300 fixed z-[9999] w-full h-[100px] flex justify-between items-center text-neutral-800;
 
     &-push-content {
       @apply px-4 xl:px-60;
@@ -15,21 +15,8 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    backdrop-filter: blur(2px);
-    // filter: url(#glass-distortion);
+    backdrop-filter: blur(10px);
     isolation: isolate;
-    -webkit-backdrop-filter: blur(2px);
-    // -webkit-filter: url('#glass-distortion');
-  }
-
-  &__header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    border-radius: 28px;
-    box-shadow: inset 0 0 20px -5px rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255), 0.4;
   }
 
   

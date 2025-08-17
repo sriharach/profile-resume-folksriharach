@@ -7,7 +7,7 @@ import { ButtonDaisyUiProps } from './ButtonDaisyUi.type'
 
 const ButtonDaisyUi = ({
   text = 'Button',
-  color,
+  color = 'primary',
   type,
   loading,
   className,
