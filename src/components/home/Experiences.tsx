@@ -1,5 +1,4 @@
 import React from 'react'
-import Timeline from '../modules/timeline/Timeline'
 import BackgroundBlur from '../modules/backgroundBlur/BackgroundBlur'
 
 

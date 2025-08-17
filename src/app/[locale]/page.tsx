@@ -7,11 +7,11 @@ import HomePage from '@/components/home/HomePage'
 
 export default function Home() {
   return (
-    <>
+    <div className='overflow-y-hidden flex-1'>
       <HomePage />
       <AboutPage />
       <Experiences />
       <Contact />
-    </>
+    </div>
   )
 }

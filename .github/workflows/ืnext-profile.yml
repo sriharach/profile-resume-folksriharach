@@ -1,0 +1,42 @@
+name: Next.js CI/CD with Vercel
+
+on:
+  push:
+    branches: [ main ] # ทำงานเมื่อ push เข้า main
+  pull_request:
+    branches: [ main ] # ทำงานเมื่อมี PR เข้ามา main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout โค้ดจาก repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. ติดตั้ง dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Run lint
+      - name: Run lint
+        run: npm run lint
+
+      # 5. Run tests
+      - name: Run tests
+        run: npm test
+
+      # 6. Build Next.js
+      - name: Build Next.js
+        run: npm run build
+
+      # 7. Deploy ไป Vercel
+      - name: Deploy to Vercel
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}

@@ -1,30 +1,15 @@
 'use client'
 
-import React, { useEffect } from 'react'
+// libs
+import React from 'react'
 import styled from './layout.module.scss'
 import SwitchLocale from '../switchLocale/SwitchLocale'
 
+// hooks
+import useLayoutHeader from '@/hooks/useLayoutHeader'
+
 const Header = () => {
-  useEffect(() => {
-    const navbar = document.getElementById('layout-header')
-
-    function EvenScroll() {
-      if (!navbar) return
-      const scrolled = window.scrollY > 400
-
-      if (scrolled) {
-        navbar.classList.add(styled['layout__header-push-content'])
-      } else {
-        navbar.classList.remove(styled['layout__header-push-content'])
-      }
-    }
-
-    window.addEventListener('scroll', EvenScroll)
-
-    return () => {
-      window.removeEventListener('scroll', EvenScroll)
-    }
-  }, [])
+  const { scrollPercent } = useLayoutHeader()
 
   return (
     <header
