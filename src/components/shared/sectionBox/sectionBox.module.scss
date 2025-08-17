@@ -1,7 +1,7 @@
 .section-box {
-    @apply px-4 py-4 xl:px-60 h-full min-h-[680px] relative after:absolute after:-z-10 after:left-0 after:top-0 after:bottom-0 after:w-[40%] after:bg-main-color-primavera1;
+    @apply px-4 py-12 lg:px-40 2xl:px-60 h-full min-h-[680px] relative after:absolute after:-z-10 after:left-0 after:top-0 after:bottom-0 after:lg:w-[40%] after:bg-main-color-primavera1;
 
     &-grid {
-        @apply grid grid-cols-2 place-content-center min-h-[680px] space-x-6 items-center;
+        @apply grid grid-cols-1 md:grid-cols-2 place-content-center min-h-[680px] gap-6 items-center;
     }
 }

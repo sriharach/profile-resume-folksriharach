@@ -12,12 +12,12 @@ const Experiences = () => {
   return (
     <FadeUpOnScroll
       id='experiences'
-      className='bg-white px-4 py-20 xl:px-60 min-h-[660px] flex justify-center items-center'
+      className='bg-white px-4 py-12 lg:py-20 lg:px-40 2xl:px-60 min-h-[660px] flex justify-center items-center'
     >
       <div className={styled['experiences']}>
         {/* experiences */}
         <div className={clsx(styled['experiences-box-col'], 'bg-neutral-800 ')}>
-          <TextTopic text='Experience' className='text-white' />
+          <TextTopic text='Experience' className='text-white text-2xl sm:text-3xl' />
           <div className={clsx(styled['experiences-content'], 'text-white')}>
             <Image
               draggable={false}
@@ -66,7 +66,7 @@ const Experiences = () => {
             'bg-main-color-primavera2',
           )}
         >
-          <TextTopic text='Skills' />
+          <TextTopic text='Skills' className='text-2xl sm:text-3xl' />
           <div className='grid grid-cols-2'>
             <div className={styled['skill-content']}>
               <Image

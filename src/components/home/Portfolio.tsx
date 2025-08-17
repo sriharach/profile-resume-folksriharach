@@ -18,12 +18,12 @@ const Portfolio = () => {
   return (
     <section id='portfolio' className={styled['profile']}>
       <FadeUpOnScroll className={styled['profile-box-col']}>
-        <TextTopic lineCenter text='My Portfolio' />
+        <TextTopic lineCenter text='My Portfolio' className='text-2xl sm:text-3xl' />
         <p className='text-neutral-500 text-center'>
           I design and develop services for customers of all sizes, specializing
           in creating stylish, modern websites, web services and online stores.
         </p>
-        <div className='grid grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
           <GardDaisyUi
             image='/projects/wisdom-construction.webp'
             title='Wisdom construction'

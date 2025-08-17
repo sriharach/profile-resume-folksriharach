@@ -39,10 +39,10 @@ const HomePage = () => {
       />
       <div className={styled['home-started']}>
         <h1 className='font-bold'>
-          <p className='text-4xl pb-4'>Hi, I'm</p>
-          <p className='text-6xl'>Sriharach Promruksa</p>
+          <p className='text-2xl md:text-4xl pb-4'>Hi, I'm</p>
+          <p className='text-4xl md:text-6xl'>Sriharach Promruksa</p>
         </h1>
-        <Typewriter className='text-4xl' text={t('introduce')} delay={100} />
+        <Typewriter className='text-2xl md:text-4xl' text={t('introduce')} delay={100} />
       </div>
       <div className='absolute z-10 bottom-10 right-12'>
         <div aria-label='linkedin-icon' className='flex flex-row space-x-3'>

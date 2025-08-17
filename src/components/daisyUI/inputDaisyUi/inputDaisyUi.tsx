@@ -7,6 +7,7 @@ const InputDaisyUi = ({
   inputSize,
   className,
   variant,
+  inputError,
   ...props
 }: InputDaisyUiProps) => {
   return (
@@ -25,6 +26,9 @@ const InputDaisyUi = ({
           'input-primary': variant === 'primary',
           'input-accent': variant === 'accent',
           'input-info': variant === 'info',
+        },
+        {
+          'input-error': inputError,
         },
         className,
       )}

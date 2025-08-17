@@ -1,4 +1,10 @@
+// hooks
+import useResponsive from './useResponsive'
+
 const useAbout = () => {
+  // hooks
+  const { width } = useResponsive()
+
   const handleClickDownloadCV = () => {
     fetch('cv-sriharach.pdf').then((res) => {
       res.blob().then((blob) => {
@@ -10,7 +16,7 @@ const useAbout = () => {
       })
     })
   }
-  return { onClickDownloadCV: handleClickDownloadCV }
+  return { onClickDownloadCV: handleClickDownloadCV, isMobileResponsive: width < 768 }
 }
 
 export default useAbout
