@@ -45,7 +45,7 @@ export default {
     themes: [
       {
         mytheme: {
-          primary: '#c87cdc',
+          primary: '#dc965a',
           secondary: '#f6d860',
           accent: '#37cdbe',
           neutral: '#3d4451',
@@ -53,8 +53,8 @@ export default {
           'base-100': '#ffffff',
         },
       },
-      'dark',
-      'cupcake',
+      // 'dark',
+      // 'cupcake',
     ],
   },
 } satisfies Config
