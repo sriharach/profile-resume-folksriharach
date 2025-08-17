@@ -15,8 +15,14 @@ import TextTopic from '../shared/textTopic/textTopic'
 const Contact = () => {
   return (
     <SectionBox>
-      <div className='bg-white shadow-xl flex flex-col space-y-6 p-6 mr-20'>
-        <TextTopic text='Contact us' />
+      <div className='bg-white shadow-xl flex flex-col space-y-6 p-6 mr-20 rounded-lg'>
+        <TextTopic
+          text={
+            <p>
+              Contact <span className='text-main-color-primavera1'>us</span>
+            </p>
+          }
+        />
         <fieldset className='fieldset bg-main-color-primavera2 border-main-color-primavera1 rounded-box w-xs border p-4'>
           <label className='label'>Name</label>
           <InputDaisyUi
@@ -49,7 +55,13 @@ const Contact = () => {
         </fieldset>
       </div>
       <div className='flex flex-col shrink-0 space-y-6'>
-        <TextTopic text='Get in touch' />
+        <TextTopic
+          text={
+            <p>
+              Get in <span className='text-main-color-primavera1'>touch</span>
+            </p>
+          }
+        />
         <p className='text-zinc-500'>
           Always available for freelancing if the right project comes along,
           Feel free to contact me.
@@ -59,13 +71,13 @@ const Contact = () => {
             <div className='flex flex-col justify-center items-center rounded-full bg-main-color-primavera1 w-10 h-10'>
               <MdAlternateEmail size={24} className='text-white' />
             </div>
-            <span>folksriharach@gmail.com</span>
+            <span className='text-neutral-500'>folksriharach@gmail.com</span>
           </div>
           <div className='flex items-center space-x-4'>
             <div className='flex flex-col justify-center items-center rounded-full bg-main-color-primavera1 w-10 h-10'>
               <MdOutlinePhoneIphone size={24} className='text-white' />
             </div>
-            <span>096-301-11722</span>
+            <span className='text-neutral-500'>096-301-11722</span>
           </div>
         </div>
       </div>

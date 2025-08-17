@@ -4,18 +4,19 @@
 import React from 'react'
 import styled from './layout.module.scss'
 import SwitchLocale from '../switchLocale/SwitchLocale'
+import clsx from 'clsx'
 
 // hooks
 import useLayoutHeader from '@/hooks/useLayoutHeader'
 
 const Header = () => {
-  const { scrollPercent } = useLayoutHeader()
+  useLayoutHeader()
 
   return (
     <header
       id='layout-header'
       data-testid='test-header'
-      className={styled['layout__header']}
+      className={clsx(styled['layout__header'])}
     >
       <div className='text-3xl font-bold'>Logo</div>
       <div className='flex justify-between items-center space-x-12'>

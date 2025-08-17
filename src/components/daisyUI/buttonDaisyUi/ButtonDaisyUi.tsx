@@ -7,21 +7,21 @@ import { ButtonDaisyUiProps } from './ButtonDaisyUi.type'
 
 const ButtonDaisyUi = ({
   text = 'Button',
-  color = 'primary',
-  type,
+  color,
+  variant = 'primary',
   loading,
   className,
-  fullWidth
+  fullWidth,
 }: ButtonDaisyUiProps) => {
   return (
     <button
       className={clsx(
         'btn',
         {
-          'btn-primary': color === 'primary',
-          'btn-ghost': type === 'ghost',
-          'btn-outline': type === 'outline',
-          'btn-block': fullWidth
+          'btn-primary': variant === 'primary',
+          'btn-ghost btn-primary': variant === 'ghost',
+          'btn-outline btn-primary': variant === 'outline',
+          'btn-block': fullWidth,
         },
         className,
       )}

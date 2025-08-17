@@ -13,10 +13,10 @@ const AboutPage = () => {
   return (
     <SectionBox>
       <Image
-        src='/img/main-profile.jpeg'
+        src='/img/main-profile.webp'
         alt=''
         width={360}
-        height={260}
+        height={360}
         className={styled['home-profile']}
       />
       <div className='flex flex-col shrink-0 space-y-6'>
@@ -46,7 +46,7 @@ const AboutPage = () => {
             <span className='w-[100px] relative after:absolute after:right-5 after:w-[1px] after:top-1/2 after:-translate-y-1/2 after:h-4 after:bg-zinc-400'>
               Phone
             </span>
-            <span className='text-zinc-500'>0963011722</span>
+            <span className='text-zinc-500'>096-301-1722</span>
           </div>
           <div className='flex flex-row'>
             <span className='w-[100px] relative after:absolute after:right-5 after:w-[1px] after:top-1/2 after:-translate-y-1/2 after:h-4 after:bg-zinc-400'>
@@ -61,6 +61,7 @@ const AboutPage = () => {
             <span className='text-zinc-500'>Sriharach Promruksa</span>
           </div>
           <ButtonDaisyUi
+            variant='outline'
             className='min-h-[80px] text-white text-lg mt-8'
             text='Download CV'
           />

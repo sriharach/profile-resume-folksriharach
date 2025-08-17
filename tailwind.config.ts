@@ -30,7 +30,7 @@ export default {
         },
         fadeInUp: {
           '0%': { opacity: '0.5', transform: 'translateY(60px)' },
-          '100%': {  opacity: '1', transform: 'translateY(0)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       animation: {
@@ -46,10 +46,10 @@ export default {
       {
         mytheme: {
           primary: '#dc965a',
-          secondary: '#f6d860',
+          secondary: '#FFE3BD',
           accent: '#37cdbe',
           neutral: '#3d4451',
-          ghost: '#c87cdc',
+          ghost: '#dc965a',
           'base-100': '#ffffff',
         },
       },
