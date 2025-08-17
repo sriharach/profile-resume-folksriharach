@@ -24,22 +24,16 @@ const useLayoutHeader = () => {
     }
   }, [])
 
-  const [scrollPercent, setScrollPercent] = React.useState(0)
-
   const handleScroll = () => {
-    const scrollTop = window.scrollY
-    const scrollHeight =
-      document.documentElement.scrollHeight - window.innerHeight
-    const percent = (scrollTop / scrollHeight) * 100
-    setScrollPercent(percent)
+    const totalHeight = document.body.scrollHeight - window.innerHeight
+    const progress = (window.scrollY / totalHeight) * 100
+    document.documentElement.style.setProperty('--progress', `${progress}%`)
   }
 
   React.useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  return { scrollPercent }
 }
 
 export default useLayoutHeader

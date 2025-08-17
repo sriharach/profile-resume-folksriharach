@@ -14,6 +14,40 @@
   }
 }
 
+.about {
+  @apply flex flex-col shrink-0 space-y-3 md:space-y-6;
+
+  &-list-contract {
+    @apply w-[100px] text-sm sm:text-base relative after:absolute after:right-5 after:w-[1px] after:top-1/2 after:-translate-y-1/2 after:h-4 after:bg-zinc-400;
+  }
+}
+
+.experiences {
+  @apply w-full 2xl:w-[70%] grid sm:grid-cols-2 gap-6;
+
+  &-box-col {
+    @apply flex flex-col space-y-8 p-6 shadow-lg rounded-2xl w-full;
+  }
+
+  &-content {
+    @apply flex flex-col space-y-1 relative after:absolute after:left-0 after:-bottom-5 after:w-full after:h-[1px] after:border-dotted after:bg-main-color-primavera1 after:last:hidden;
+  }
+}
+
+.skill {
+  &-content {
+    @apply text-neutral-500 flex flex-col justify-center items-center;
+  }
+}
+
+.profile {
+  @apply bg-main-color-primavera2 py-12 md:py-20 px-4 xl:px-60 min-h-[660px] flex justify-center items-center;
+
+  &-box-col {
+    @apply w-full 2xl:w-[70%] flex flex-col justify-center items-center space-y-6;
+  }
+}
+
 @keyframes profile_img {
   0% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%

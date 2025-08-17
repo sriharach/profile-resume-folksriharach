@@ -29,14 +29,14 @@ export default {
           '50%': { boxShadow: '0 0 20px rgba(255, 255, 255, 1)' },
         },
         fadeInUp: {
-          '0%': { opacity: '0.5', transform: 'translateY(60px)' },
-          '100%': {  opacity: '1', transform: 'translateY(0)' },
+          '0%': { opacity: '0', transform: 'translateY(100%)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       animation: {
         moveUpDown: 'moveUpDown 2.5s ease-in-out infinite',
         luminescence: 'luminescence 2s infinite',
-        fadeInUp: 'fadeInUp 1.6s ease-out',
+        fadeInUp: 'fadeInUp 0.4s ease-out',
       },
     },
   },
@@ -46,10 +46,10 @@ export default {
       {
         mytheme: {
           primary: '#dc965a',
-          secondary: '#f6d860',
+          secondary: '#FFE3BD',
           accent: '#37cdbe',
           neutral: '#3d4451',
-          ghost: '#c87cdc',
+          ghost: '#dc965a',
           'base-100': '#ffffff',
         },
       },

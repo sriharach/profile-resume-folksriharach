@@ -1,4 +1,5 @@
 export interface TextTopicProps {
-  text?: string
+  text?: React.ReactNode
   className?: string
+  lineCenter?: boolean
 }
