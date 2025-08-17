@@ -11,33 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout โค้ดจาก repo
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 22
 
-      # 3. ติดตั้ง dependencies
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
-      # 4. Build Next.js
       - name: Build Next.js
-        run: npm run build
+        run: yarn build
 
-      # 5. Deploy ไป Vercel
       - name: Deploy to Vercel
         run: |
-          npx vercel pull --yes --environment=production \
+          npm install -g vercel
+          vercel pull --yes --environment=production \
             --token=${{ secrets.VERCEL_TOKEN }}
-          npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-          npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-        env: SERVICE_ID: ${{ secrets.SERVICE_ID }}
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env: 
+          SERVICE_ID: ${{ secrets.SERVICE_ID }}
           TEMPLATE_ID: ${{ secrets.TEMPLATE_ID }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           WISDOM_DOMAIN: ${{ secrets.WISDOM_DOMAIN }}
