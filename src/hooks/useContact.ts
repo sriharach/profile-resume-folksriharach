@@ -1,5 +1,6 @@
 // libs
 import { useForm } from 'react-hook-form'
+import { useEffect, useState } from 'react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import emailjs from '@emailjs/browser'
 import { toast } from 'react-toastify'
@@ -9,7 +10,6 @@ import { FormContract } from '@/types/models/contract.modal'
 
 // libs
 import contractSchema from '@/libs/contractSchema'
-import { useState } from 'react'
 
 const useContact = () => {
   const [loading, setLoading] = useState(false)
@@ -22,6 +22,7 @@ const useContact = () => {
     register,
     handleSubmit,
     reset,
+    clearErrors,
     formState: { errors },
   } = useForm<FormContract>({
     resolver: yupResolver(contractSchema()),
@@ -35,7 +36,13 @@ const useContact = () => {
       })
       .then(() => {
         setLoading(false)
-        reset()
+        reset({
+          name: '',
+          mail: '',
+          message: '',
+          phone_number: ''
+        })
+        clearErrors()
         toast.success('Email has been sent.')
       })
       .catch(() => {
